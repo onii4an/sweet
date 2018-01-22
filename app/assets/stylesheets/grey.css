@@ -1,0 +1,134 @@
+body {
+	background: #DEDEDE url('bg-grey.png') repeat 50% -25%;
+}
+
+::-moz-selection {
+	color: #FFF;
+	background: #515151;
+}
+::selection {
+	color: #FFF;
+	background: #515151;
+}
+
+#page {
+	background: #515151;
+}
+#header p strong {
+	color: #515151;
+}
+#header h2 {
+	color: rgba(255, 255, 255, 0.7);
+}
+#footer {
+	color: #8D8D8D;
+	color: rgba(255, 255, 255, 0.8);
+}
+#footer a, #footer a:visited {
+	color: inherit;
+}
+
+#side {
+	background: #515151;
+}
+#current-user {
+	background: #515151;
+}
+#nickname::after {
+	background: -webkit-linear-gradient(left, rgba(81, 81, 81, 0) 0%, rgba(81, 81, 81, 1) 100%);
+	background: linear-gradient(to right, rgba(81, 81, 81, 0) 0%, rgba(81, 81, 81, 1) 100%);
+}
+.menu-header {
+	color: #515151;
+}
+.contact-invite-button {
+	color: #515151;
+}
+.contact-item.blocked .online-indicator,
+.contact-item.not-accepted .online-indicator {
+	background: #B4D6A7/*#8D8D8D*/;
+}
+#log ol .invite .button-flat {
+	color: #515151;
+}
+.contact-item .unread-badge {
+	background: #515151;
+}
+.contact-item .online-indicator {
+	background: #8AC176;
+}
+.field-bar {
+	background: #515151;
+}
+.field-wrap input:focus ~ .field-label {
+	color: #515151;
+}
+.signin-button {
+	background: rgba(81, 81, 81, 0.9);
+}
+.signin-button:hover {
+	background: rgba(81, 81, 81, 0.85);
+}
+.validate .field-wrap input:invalid {
+	background: rgba(81, 81, 81, 0.1);
+}
+#title {
+	color: #515151;
+}
+#online-count {
+	color: #515151;
+}
+#friend-online-indicator {
+	background: #8AC176;
+}
+.but-chat-start {
+	background: rgba(81, 81, 81, 0.85);
+}
+.but-chat-start:hover {
+	background: rgba(81, 81, 81, 0.75);
+}
+#log ol > li.unread .time::before {
+	background: rgba(81, 81, 81, 0.75);
+}
+.img-loading {
+	color: #515151;
+}
+#controls {
+	background: #515151;
+}
+.switch.switch-dark.on i {
+	background: rgba(81, 81, 81, 0.325);
+}
+.switch.switch-light i::after {
+	background: #515151;
+}
+.switch.switch-dark.on i::after {
+	background: #696969; /* 0.8 */
+}
+.switch.switch-light.on i::after {
+	background: #DEDEDE; /* 0.2 */
+}
+.switch-label:not(.disabled) .switch.switch-dark.on i:active::after {
+	box-shadow: 0 0 0 12px rgba(81, 81, 81, 0.1);
+}
+
+#push-offer-enable {
+	background: rgba(81, 81, 81, 0.9);
+}
+#push-offer-enable:hover {
+	background: rgba(81, 81, 81, 0.85);
+}
+
+.modal-buttons {
+	color: #515151;
+}
+
+#side-toggle {
+	background: #515151;
+}
+body.start-page #side-toggle.side-shown::after {
+	background: #515151;
+}
+#side-toggle.has-unread:not(.side-shown)::before {
+	color: #515151;
+}

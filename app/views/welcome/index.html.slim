@@ -1,2 +1,44 @@
-h1 Welcome#index
-p Find me in app/views/welcome/index.html.slim
+  body.start-page
+    /! VK social
+    #wrapper
+      /! chat content
+      .chatContent
+        #page
+          #header.clearfix
+            h1
+              a href="https://chatvdvoem.ru/"  ЧатВдвоем
+            h2 Поговори с незнакомцем
+            p.usersOnline
+              | Пользователей на сайте
+              strong#online_counter 1559
+          noscript
+            .noJs
+              h2 Пожалуйста, включите Javascript
+              p В вашем браузере отключена поддержка Javascript. Для полноценной работы сервиса необходимо включить Javascript.
+          #main.clearfix
+            #wideContainer
+              #content
+                .promo
+                  h1 Общение вслепую tet-a-tet
+                  p
+                    | Место, где можно развлечься и
+                    | пообщаться один на один с неизвестным собеседником, выбранным случайно.
+                    | Никаких регистраций, все
+                    | совершенно тайно.
+                h2.startChat
+                  a#chat_start href="https://chatvdvoem.ru/"  Начать чат
+          #footer.clearfix
+            ul
+              li
+                a href="https://chatvdvoem.ru/widget"  Виджет
+              li
+                a href="https://chatvdvoem.ru/adv"  Реклама
+              li
+                a href="https://chatvdvoem.ru/faq"  Частые вопросы
+              li
+                a href="https://chatvdvoem.ru/feedback"  Контакты
+              li
+                a href="https://chatvdvoem.ru/bugsbounty"  BugsBounty
+              li
+                a href="https://chatvdvoem.ru/stickers.php" target="_blank"  Стикеры
+            address © 2009-2018 Антон Исайкин и Дмитрий Папуца

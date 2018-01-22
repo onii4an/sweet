@@ -1,0 +1,134 @@
+body {
+	background: #F0F6DD url('bg-green.png') repeat 50% -25%;
+}
+
+::-moz-selection {
+	color: #FFF;
+	background: #1e8c90;
+}
+::selection {
+	color: #FFF;
+	background: #1e8c90;
+}
+
+#page {
+	background: #1e8c90;
+}
+#header p strong {
+	color: #1e8c90;
+}
+#header h2 {
+	color: rgba(255, 255, 255, 0.7);
+}
+#footer {
+	color: #6BB6BA;
+	color: rgba(255, 255, 255, 0.8);
+}
+#footer a, #footer a:visited {
+	color: inherit;
+}
+
+#side {
+	background: #1e8c90;
+}
+#current-user {
+	background: #1e8c90;
+}
+#nickname::after {
+	background: -webkit-linear-gradient(left, rgba(30, 140, 144, 0) 0%, rgba(30, 140, 144, 1) 100%);
+	background: linear-gradient(to right, rgba(30, 140, 144, 0) 0%, rgba(30, 140, 144, 1) 100%);
+}
+.menu-header {
+	color: #1e8c90;
+}
+.contact-invite-button {
+	color: #1e8c90;
+}
+/*.contact-item.blocked .online-indicator,
+.contact-item.not-accepted .online-indicator {
+	background: #6BB6BA;
+}*/
+#log ol .invite .button-flat {
+	color: #1e8c90;
+}
+.contact-item .unread-badge {
+	background: #1e8c90;
+}
+/*.contact-item .online-indicator {
+	background: #1e8c90;
+}*/
+.field-bar {
+	background: #1e8c90;
+}
+.field-wrap input:focus ~ .field-label {
+	color: #1e8c90;
+}
+.signin-button {
+	background: rgba(30, 140, 144, 0.9);
+}
+.signin-button:hover {
+	background: rgba(30, 140, 144, 0.85);
+}
+.validate .field-wrap input:invalid {
+	background: rgba(30, 140, 144, 0.1);
+}
+#title {
+	color: #1e8c90;
+}
+#online-count {
+	color: #1e8c90;
+}
+/*#friend-online-indicator {
+	background: #1e8c90;
+}*/
+.but-chat-start {
+	background: rgba(30, 140, 144, 0.85);
+}
+.but-chat-start:hover {
+	background: rgba(30, 140, 144, 0.75);
+}
+#log ol > li.unread .time::before {
+	background: rgba(30, 140, 144, 0.75);
+}
+.img-loading {
+	color: #1e8c90;
+}
+#controls {
+	background: #1e8c90;
+}
+.switch.switch-dark.on i {
+	background: rgba(30, 140, 144, 0.325);
+}
+.switch.switch-light i::after {
+	background: #1e8c90;
+}
+.switch.switch-dark.on i::after {
+	background: #3F9EA2; /* 0.8 */
+}
+.switch.switch-light.on i::after {
+	background: #CEECF0; /* 0.2 */
+}
+.switch-label:not(.disabled) .switch.switch-dark.on i:active::after {
+	box-shadow: 0 0 0 12px rgba(30, 140, 144, 0.1);
+}
+
+#push-offer-enable {
+	background: rgba(30, 140, 144, 0.9);
+}
+#push-offer-enable:hover {
+	background: rgba(30, 140, 144, 0.85);
+}
+
+.modal-buttons {
+	color: #1e8c90;
+}
+
+#side-toggle {
+	background: #1e8c90;
+}
+body.start-page #side-toggle.side-shown::after {
+	background: #1e8c90;
+}
+#side-toggle.has-unread:not(.side-shown)::before {
+	color: #1e8c90;
+}
