@@ -11,6 +11,23 @@ h2
     br
     = f.text_field :username
   .field
+    = f.label :name
+    br
+    = f.text_field :name
+  .field
+    = f.label :surname
+    br
+    = f.text_field :surname
+  .field
+    = f.label :age
+    br
+    = f.select :age, options_for_select(18..40)
+  .field
+    = f.radio_button :sex, "male"
+    p Male
+    = f.radio_button :sex, "female"
+    p Female
+  .field
     = f.label :password
     - if @minimum_password_length
       em
