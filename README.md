@@ -8,3 +8,4 @@ Blind appointment service
 - The photo will be opened gradually. If the chat, for example, is extended, then 1/5 of the photo opens (like a puzzle). Or the person himself confirms the opening of one part of the photo.
 - There is a choice of age category.
 - You can complain about a person, have a ban.
+- Display on the main page the number of girls and guys online
