@@ -10,6 +10,9 @@ h2
     = f.label :username
     br
     = f.text_field :username
+  = f.label :avatar do
+    = f.file_field :avatar
+    = f.hidden_field :avatar_cache
   .field
     = f.label :name
     br
