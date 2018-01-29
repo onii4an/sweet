@@ -8,6 +8,8 @@ end
 gem 'slim-rails'
 # Devise flexible authentication
 gem 'devise', '~> 4.4', '>= 4.4.1'
+# Gem for Rails application - provides you list of online users
+gem 'onliner'
 # A simple and extremely flexible way to upload files from Ruby applications
 # Using for avatars
 gem 'carrierwave', '~> 1.0'

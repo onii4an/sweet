@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, multiline: true
   mount_uploader :avatar, AvatarUploader
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :onliner
   validates_presence_of   :avatar
   validates_integrity_of  :avatar
   validates_processing_of :avatar
