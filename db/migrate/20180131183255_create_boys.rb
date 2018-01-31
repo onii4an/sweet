@@ -1,8 +1,5 @@
 class CreateBoys < ActiveRecord::Migration[5.1]
   def change
-    create_table :boys do |t|
-
-      t.timestamps
-    end
+    create_table :boys, &:timestamps
   end
 end
