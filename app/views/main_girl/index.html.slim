@@ -1,0 +1,6 @@
+h1 You at girl page
+p logged as #{current_girl.username}
+p Boys online #{Boy.online.count}
+p Girls online #{Girl.online.count}
+a= link_to 'Logout', destroy_girl_session_path, method: :delete
+a= link_to 'Account settings', edit_girl_registration_path

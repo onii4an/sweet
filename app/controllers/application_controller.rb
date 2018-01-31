@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  #before_action { |c| current_user.track unless current_user.nil?}
+  before_action { |c| current_boy.track unless current_boy.nil?}
+  before_action { |c| current_girl.track unless current_girl.nil?}
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
