@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get 'main' => 'logged#index'
   get 'main_boy' => 'main_boy#index'
   get 'main_girl' => 'main_girl#index'
+  get 'conversation' => 'conversation#index'
   root 'welcome#index'
 end

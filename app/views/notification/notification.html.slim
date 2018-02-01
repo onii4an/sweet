@@ -1,0 +1,1 @@
+a href="/conversation/#{conversation_boy.first if conversation_boy}#{conversation_girl.first if conversation_girl}" Join conversation with #{Girl.find_by_id(conversation_boy.second).name if conversation_boy}#{Boy.find_by_id(conversation_girl.second).name if conversation_girl}
