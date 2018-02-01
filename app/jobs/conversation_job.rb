@@ -1,7 +1,7 @@
 class ConversationJob < ApplicationJob
   queue_as :default
 
-  def perform(action_name, *args)
+  def perform(action_name, args)
     self.send(action_name.to_sym, *args) if self.respond_to?(action_name.to_sym, :include_private)
   end
 

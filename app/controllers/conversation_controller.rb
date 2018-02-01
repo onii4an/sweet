@@ -10,7 +10,7 @@ class ConversationController < ApplicationController
       @offset_girl = rand(Girl.where(waiting: true).size)
       @girl_id = Girl.where(waiting: true).offset(@offset_girl).first.id
       Conversation.create('boy_id' => @boy_id, 'girl_id' => @girl_id)
-      ConversationJob.perform_later('created', @boy_id, @girl_id, Conversation.where('boy_id' => @boy_id, 'girl_id' => @girl_id).first.id)
+      ConversationJob.perform_later('created', [@boy_id, @girl_id, Conversation.where('boy_id' => @boy_id, 'girl_id' => @girl_id).first.id])
     end
   end
 
