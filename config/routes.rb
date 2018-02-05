@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   get 'main_boy' => 'main_boy#index'
   get 'main_girl' => 'main_girl#index'
   get 'conversation' => 'conversation#index'
+  get 'conversations/:id' => 'conversations#show'
+  resources :messages
   root 'welcome#index'
 end
