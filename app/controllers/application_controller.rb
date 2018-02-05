@@ -3,6 +3,12 @@ class ApplicationController < ActionController::Base
   before_action { |_c| current_boy.track unless current_boy.nil? }
   before_action { |_c| current_girl.track unless current_girl.nil? }
   before_action :configure_permitted_parameters, if: :devise_controller?
+  helper_method :current_user
+
+  def current_user
+    current_boy if current_boy
+    current_girl if current_girl
+  end
 
   protected
 
