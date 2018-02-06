@@ -9,6 +9,6 @@ class MessageJob < ApplicationJob
   private
 
   def create(message)
-    ActionCable.server.broadcast "cv_#{message.conversation_id}", user_id: message.user_id, message_body: message.body, action: :create, res: ApplicationController.renderer.render(partial: 'messages/message', object: message, alien: true)
+    MessageChannel.broadcast_to "cv_#{message.conversation_id}", user_id: message.user_id, message_body: message.body, action: :create, res: ApplicationController.renderer.render(partial: 'messages/message', object: message, alien: true)
   end
 end
