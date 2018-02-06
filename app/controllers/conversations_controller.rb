@@ -12,7 +12,7 @@ class ConversationsController < ApplicationController
   end
 
   def message
-    Message.new
+    @message ||= Message.new
   end
 
   private

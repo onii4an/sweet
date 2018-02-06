@@ -6,8 +6,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def current_user
-    current_boy if current_boy
-    current_girl if current_girl
+    if current_girl
+      current_girl
+    elsif current_boy
+      current_boy
+    end
   end
 
   protected

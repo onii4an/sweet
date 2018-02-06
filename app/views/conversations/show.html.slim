@@ -1,8 +1,9 @@
 h1 Conversation with #{Boy.find(@conversation.boy_id).name if current_girl}#{Girl.find(@conversation.girl_id).name if current_boy}
-div.messages
-  = paginate conversation_messages
-div.answer
-  = form_for message, remote: true do |f|
-    = f.text_field :body, placeholder: 'Your message', required: true, class: :textarea, autocomplete: :off
-    = button_tag 'Submit', type: :submit, class: :send_message
+ol.chat data-user="#{current_user.id}"
+  div.messages
+    = paginate conversation_messages
+  div.answer
+    = form_for message, remote: true do |f|
+      = f.text_field :body, placeholder: 'Your message', required: true, class: :textarea, autocomplete: :off
+      = button_tag 'Submit', type: :submit, class: :send_message
 
