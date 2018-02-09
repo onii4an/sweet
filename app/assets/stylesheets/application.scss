@@ -23,18 +23,40 @@ background-size: cover;
 }
 
 .container { 
-color:#f05f40;
-font-size: 15px;
-font-style: italic;
-border: 1px solid green;
+  margin-top: 12px;
+  color:#f05f40;
+  font-size: 15px;
+  font-style: italic;
+  #border: 1px solid green;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .btn-group {
-margin: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
 }
 
 h1 {
-color:#ffffff;
-font-size: 80px;
-font-family: italic, cursive;
+  color:#ffffff;
+  font-size: 80px;
+  font-family: italic;
+  text-shadow: 3px 2px 2px grey;
+}
+
+.quote {
+  color:#E1E0DF;
+  font-size: 25px;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  #text-align: justify;
+  margin: 20px 45px 25px 45px;
+}
+
+hr {
+  max-width: 750px;
+  border-width: 2px;
+}
+
+hr.bottom {
+  max-width: 250px;
+  border-width: 2px;
 }

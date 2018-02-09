@@ -1,13 +1,16 @@
 div class="container text-center"
   h1 WELCOME
-  p Boys online #{Boy.online.count}
-  p Girls online #{Girl.online.count}
-br
-br
-
+  h3 Boys online: #{Boy.online.count}
+  h3 Girls online: #{Girl.online.count}
+hr
+div class="quote"
+  p A place where you can have fun 
+  p and chat one-on-one with an unknown companion, chosen randomly...
+hr class="bottom"
+h2 Choose your gender
 div class="container text-center"
   <div class="btn-group">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> MAN
+    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"> MAN
     </button>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="#{new_boy_session_path}">Sign in as boy</a>
