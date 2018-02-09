@@ -9,22 +9,16 @@ div class="quote"
 hr class="bottom"
 h2 Choose your gender
 div class="container text-center"
-  <div class="btn-group">
-    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"> MAN
-    </button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#{new_boy_session_path}">Sign in as boy</a>
-        br
-        <a class="dropdown-item" href="#{new_boy_registration_path}">Sign up as boy</a>
-      </div>
-  </div>
+  div class="btn-group"
+    button.btn.btn-danger.dropdown-toggle data-toggle="dropdown" MAN
+    div class="dropdown-menu"
+      a class="dropdown-item" href="#{new_boy_session_path}" Sign in as boy
+      br
+      a class="dropdown-item" href="#{new_boy_registration_path}" Sign up as boy
 
-  <div class="btn-group">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> GIRL
-    </button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#{new_girl_session_path}">Sign in as girl</a>
-        br
-        <a class="dropdown-item" href="#{new_girl_registration_path}">Sign up as girl</a>
-      </div>
-  </div>
+  div class="btn-group"
+    button.btn.btn-primary.dropdown-toggle data-toggle="dropdown" GIRL
+    div class="dropdown-menu"
+      a class="dropdown-item" href="#{new_girl_session_path}" Sign in as girl
+      br
+      a class="dropdown-item" href="#{new_girl_registration_path}" Sign up as girl
