@@ -1,7 +1,27 @@
-h1 Welcome
-p Boys online #{Boy.online.count}
-p Girls online #{Girl.online.count}
-a= link_to 'Sign in as boy', new_boy_session_path
-a= link_to 'Sign up as boy', new_boy_registration_path
-a= link_to 'Sign in as girl', new_girl_session_path
-a= link_to 'Sign up as girl', new_girl_registration_path
+div class="container text-center"
+  h1 WELCOME
+  p Boys online #{Boy.online.count}
+  p Girls online #{Girl.online.count}
+br
+br
+
+div class="container text-center"
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> MAN
+    </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#{new_boy_session_path}">Sign in as boy</a>
+        br
+        <a class="dropdown-item" href="#{new_boy_registration_path}">Sign up as boy</a>
+      </div>
+  </div>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> GIRL
+    </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#{new_girl_session_path}">Sign in as girl</a>
+        br
+        <a class="dropdown-item" href="#{new_girl_registration_path}">Sign up as girl</a>
+      </div>
+  </div>

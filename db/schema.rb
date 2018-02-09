@@ -23,9 +23,14 @@ ActiveRecord::Schema.define(version: 20180201193932) do
   create_table "conversations", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "recipient_id"
+    t.integer "sender_id"
     t.integer "boy_id"
     t.integer "girl_id"
     t.index ["boy_id", "girl_id"], name: "index_conversations_on_boy_id_and_girl_id", unique: true
+    t.index ["recipient_id", "sender_id"], name: "index_conversations_on_recipient_id_and_sender_id", unique: true
+    t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
+    t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end
 
   create_table "girls", force: :cascade do |t|
@@ -39,8 +44,6 @@ ActiveRecord::Schema.define(version: 20180201193932) do
     t.text "body"
     t.bigint "user_id"
     t.bigint "conversation_id"
-    t.integer "boy_id"
-    t.integer "girl_id"
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
@@ -60,6 +63,7 @@ ActiveRecord::Schema.define(version: 20180201193932) do
     t.inet "last_sign_in_ip"
     t.string "username"
     t.integer "age"
+    t.string "sex"
     t.string "status", default: "not banned"
     t.string "name"
     t.string "surname"

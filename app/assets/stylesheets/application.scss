@@ -16,3 +16,25 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body { 
+background: url('/assets/header.jpg') no-repeat center center fixed; 
+background-size: cover;
+}
+
+.container { 
+color:#f05f40;
+font-size: 15px;
+font-style: italic;
+border: 1px solid green;
+}
+
+.btn-group {
+margin: 5px 5px 5px 5px;
+}
+
+h1 {
+color:#ffffff;
+font-size: 80px;
+font-family: italic, cursive;
+}
