@@ -27,7 +27,7 @@ background-size: cover;
   color:#f05f40;
   font-size: 15px;
   font-style: italic;
-  #border: 1px solid green;
+  border: 1px solid green;
   font-family: 'Times New Roman', Times, serif;
 }
 
@@ -47,7 +47,6 @@ h1 {
   font-size: 25px;
   font-style: italic;
   font-family: 'Times New Roman', Times, serif;
-  #text-align: justify;
   margin: 20px 45px 25px 45px;
 }
 
@@ -59,4 +58,8 @@ hr {
 hr.bottom {
   max-width: 250px;
   border-width: 2px;
+}
+
+input[type="file"] {
+  margin-left: 482px;
 }
