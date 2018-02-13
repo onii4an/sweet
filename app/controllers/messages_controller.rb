@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
 
   def create
-    @message = current_user.messages.create(message_params)
+    @message = Message.create(user_id: current_user.id, conversation_id: current_conversation.id, body: message_params[:body])
     MessageJob.perform_later('create', @message)
   end
 
@@ -12,6 +12,6 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:body, :conversation_id)
+    params.require(:message).permit(:body)
   end
 end

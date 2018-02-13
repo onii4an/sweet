@@ -4,12 +4,21 @@ class ApplicationController < ActionController::Base
   before_action { |_c| current_girl.track unless current_girl.nil? }
   before_action :configure_permitted_parameters, if: :devise_controller?
   helper_method :current_user
+  helper_method :current_conversation
 
   def current_user
     if current_girl
       current_girl
     elsif current_boy
       current_boy
+    end
+  end
+
+  def current_conversation
+    if current_boy
+      Conversation.where(boy_id: current_boy.id).last
+    elsif current_girl
+      Conversation.where(girl_id: current_girl.id).last
     end
   end
 

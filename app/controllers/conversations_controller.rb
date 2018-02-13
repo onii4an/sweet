@@ -8,7 +8,7 @@ class ConversationsController < ApplicationController
   end
 
   def conversation_messages
-    Message.where(conversation_id: @conversation.id).page params[:page]
+    Message.where(conversation_id: conversation.id).page params[:page]
   end
 
   def message
@@ -22,6 +22,6 @@ class ConversationsController < ApplicationController
   end
 
   def check_user
-    redirect_to root_path unless conversation.boy_id = current_boy&.id || conversation.girl_id = current_girl&.id
+    redirect_to root_path unless conversation.boy_id == current_boy&.id || conversation.girl_id == current_girl&.id
   end
 end
