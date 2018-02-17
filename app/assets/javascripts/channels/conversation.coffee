@@ -10,5 +10,5 @@ App.conversation = App.cable.subscriptions.create "ConversationChannel",
     # Called when there's incoming data on the websocket for this channel
 Conversation ={
   create: (data) ->
-    $('.conversation_create').append(data['res'])
+    window.location.replace("/conversations/" + [data['id']])
 }

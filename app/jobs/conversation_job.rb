@@ -8,11 +8,11 @@ class ConversationJob < ApplicationJob
   private
 
   def create(boy_id, girl_id, conversation_id)
-    conversation_boy = Array.wrap([conversation_id, girl_id])
-    conversation_girl = Array.wrap([conversation_id, boy_id])
-    ConversationChannel.broadcast_to "user_#{boy_id}", girl_id: girl_id, action: :create, res: ApplicationController.renderer.render(partial: 'notification/notification', object: conversation_boy)
-    ConversationChannel.broadcast_to "user_#{girl_id}", boy_id: boy_id, action: :create, res: ApplicationController.renderer.render(partial: 'notification/notification', object: conversation_girl)
-    current_boy.update(waiting: false) if current_boy
-    current_girl.update(waiting: false) if current_girl
+    # conversation_boy = Array.wrap([conversation_id, girl_id])
+    # conversation_girl = Array.wrap([conversation_id, boy_id])
+    ActionCable.server.broadcast_to "user_#{girl_id}", action: :create, id: conversation_id
+    ActionCable.server.broadcast_to "user_#{boy_id}", action: :create, id: conversation_id
+    Boy.find(boy_id).update(waiting: false)
+    Girl.find(girl_id).update(waiting: false)
   end
 end
