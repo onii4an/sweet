@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180201193932) do
+ActiveRecord::Schema.define(version: 20180217180308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,14 +23,9 @@ ActiveRecord::Schema.define(version: 20180201193932) do
   create_table "conversations", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "recipient_id"
-    t.integer "sender_id"
     t.integer "boy_id"
     t.integer "girl_id"
     t.index ["boy_id", "girl_id"], name: "index_conversations_on_boy_id_and_girl_id", unique: true
-    t.index ["recipient_id", "sender_id"], name: "index_conversations_on_recipient_id_and_sender_id", unique: true
-    t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
-    t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end
 
   create_table "girls", force: :cascade do |t|
@@ -63,13 +58,13 @@ ActiveRecord::Schema.define(version: 20180201193932) do
     t.inet "last_sign_in_ip"
     t.string "username"
     t.integer "age"
-    t.string "sex"
     t.string "status", default: "not banned"
     t.string "name"
     t.string "surname"
     t.string "avatar"
     t.string "type"
     t.boolean "waiting", default: false
+    t.boolean "in_a_conversation", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
