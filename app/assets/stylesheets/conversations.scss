@@ -12,6 +12,8 @@ ol.chat {
 
 .messages {
   border: 1px solid yellow;
+  word-wrap: break-word;
+  text-align: left;
 }
 
 #chat {
@@ -28,4 +30,13 @@ ol.chat {
   height: 320px;
   margin: 5px;
   text-align: center;     /* will center text in <p>, which is not a flex item */
+}
+
+.messages_text {
+  background-color: #6b6c886e;
+  padding: .2em .6em .3em;
+  font-weight: bold;
+  color: #fff;
+  border-radius: .25em;
+  margin: 5px 15px 5px 15px;
 }

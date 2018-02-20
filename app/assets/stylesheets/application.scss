@@ -67,6 +67,10 @@ input[type="file"] {
 img {
   width: 230px;
   height: 230px;
+  border-radius: 12px; //rounding of corners (general)
+  -webkit-border-radius: 12px; //rounding of corners (Google Chrome)
+  -moz-border-radius: 12px; //rounding of corners (FireFox)
+  -khtml-border-radius: 12px; //rounding of corners (Safari)
 }
 
 .edit_avatar {

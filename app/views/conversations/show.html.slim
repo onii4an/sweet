@@ -1,8 +1,10 @@
-h1 Conversation with #{Boy.find(@conversation.boy_id).name if current_girl}#{Girl.find(@conversation.girl_id).name if current_boy}
+h1 Conversation with #{Boy.find(@conversation.boy_id).surname if current_girl}#{Girl.find(@conversation.girl_id).surname if current_boy}
 div#chat
   div.box
     p #Boy_block
     = image_tag(current_conversation.boy.avatar.url)
+    br
+    = current_conversation.boy.surname
   ol.chat
     div.messages
       = render conversation_messages
@@ -13,3 +15,4 @@ div#chat
   div.box
     p #Girl_block
     = image_tag(current_conversation.girl.avatar.url)
+    = current_conversation.girl.surname
