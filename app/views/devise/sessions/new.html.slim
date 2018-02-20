@@ -15,4 +15,17 @@ h2
       = f.label :remember_me
   .actions
     = f.submit "Log in"
-= render "devise/shared/links"
+/ = render "devise/shared/links"
+.btn-group
+  button.btn.btn-primary.dropdown-toggle data-toggle="dropdown" Register
+  .dropdown-menu
+    a.dropdown-item href='#{new_boy_registration_path}' Register as boy
+    br
+    a.dropdown-item href='#{new_girl_registration_path}' Register as girl
+
+.btn-group
+  button.btn.btn-primary.dropdown-toggle data-toggle="dropdown" Forgot password
+  .dropdown-menu
+    a.dropdown-item href='#{new_boy_password_path}' For boy
+    br
+    a.dropdown-item href='#{new_girl_password_path}' For girl
