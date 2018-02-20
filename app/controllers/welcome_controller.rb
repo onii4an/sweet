@@ -8,5 +8,6 @@ class WelcomeController < ApplicationController
   def check_user
     redirect_to main_boy_path if current_boy
     redirect_to main_girl_path if current_girl
+    redirect_to main_admin_path if current_admin
   end
 end
