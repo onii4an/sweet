@@ -1,3 +1,31 @@
 // Place all the styles related to the conversations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.answer {
+  border: 1px solid blue;
+}
+
+ol.chat {
+  border: 1px solid white;
+  width: 500px;
+}
+
+.messages {
+  border: 1px solid yellow;
+}
+
+#chat {
+  display: flex;           /* establish flex container */
+  flex-direction: row;  /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+  align-items: flex-start;     /* center items horizontally, in this case */
+  border: 1px solid black;
+}
+
+.box {
+  border: 1px solid yellow;
+  width: 300px;
+  height: 320px;
+  margin: 5px;
+  text-align: center;     /* will center text in <p>, which is not a flex item */
+}

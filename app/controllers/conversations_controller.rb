@@ -16,6 +16,10 @@ class ConversationsController < ApplicationController
     @message ||= Message.new
   end
 
+  def destroy
+    
+  end
+
   private
 
   def conversation

@@ -1,9 +1,15 @@
 h1 Conversation with #{Boy.find(@conversation.boy_id).name if current_girl}#{Girl.find(@conversation.girl_id).name if current_boy}
-ol.chat
-  div.messages
-    = render conversation_messages
-  div.answer
-    = form_for message, remote: true do |f|
-      = f.text_field :body, placeholder: 'Your message', required: true, class: :textarea, autocomplete: :off
-      = button_tag 'Submit', type: :submit, class: :send_message
-
+div#chat
+  div.box
+    p #Boy_block
+    = image_tag(current_conversation.boy.avatar.url)
+  ol.chat
+    div.messages
+      = render conversation_messages
+    div.answer
+      = form_for message, remote: true do |f|
+        = f.text_field :body, placeholder: 'Your message', required: true, class: :textarea, autocomplete: :off
+        = button_tag 'Submit', type: :submit, class: :send_message
+  div.box
+    p #Girl_block
+    = image_tag(current_conversation.girl.avatar.url)
