@@ -1,22 +1,11 @@
 Rails.application.routes.draw do
   devise_for :admins, skip: :all
-  devise_for :boys, skip: [:sessions]
-  devise_for :girls, skip: [:sessions]
-  devise_for :users, skip: :all
-  as :user do
-    get 'login', to: 'devise/sessions#new', as: :new_user_session
-    post 'login', to: 'devise/sessions#create', as: :user_session
-    delete 'logout', to: 'devise/sessions#destroy', as: :destroy_user_session
-  end
-  as :boy do
-    get 'login', to: 'devise/sessions#new', as: :new_boy_session
-    post 'login', to: 'devise/sessions#create', as: :boy_session
-    delete 'logout', to: 'devise/sessions#destroy', as: :destroy_boy_session
-  end
-  as :girl do
-    get 'login', to: 'devise/sessions#new', as: :new_girl_session
-    post 'login', to: 'devise/sessions#create', as: :girl_session
-    delete 'logout', to: 'devise/sessions#destroy', as: :destroy_girl_session
+  devise_for :boys
+  devise_for :girls
+  as :admin do
+    get 'login_admin', to: 'devise/sessions#new', as: :new_admin_session
+    post 'login_admin', to: 'devise/sessions#create', as: :admin_session
+    delete 'logout_admin', to: 'devise/sessions#destroy', as: :destroy_admin_session
   end
   get 'welcome/index'
   get 'main' => 'logged#index'
