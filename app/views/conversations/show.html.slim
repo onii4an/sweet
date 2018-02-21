@@ -1,18 +1,22 @@
-h1 Conversation with #{Boy.find(@conversation.boy_id).surname if current_girl}#{Girl.find(@conversation.girl_id).surname if current_boy}
+h1 Conversation with #{Boy.find(@conversation.boy_id).username if current_girl}#{Girl.find(@conversation.girl_id).username if current_boy}
 div#chat
   div.box
     p #Boy_block
     = image_tag(current_conversation.boy.avatar.url)
     br
-    = current_conversation.boy.surname
+    = current_conversation.boy.username
   ol.chat
     div.messages
       = render conversation_messages
-    div.answer
-      = form_for message, remote: true do |f|
-        = f.text_field :body, placeholder: 'Your message', required: true, class: :textarea, autocomplete: :off
-        = button_tag 'Submit', type: :submit, class: :send_message
   div.box
     p #Girl_block
     = image_tag(current_conversation.girl.avatar.url)
-    = current_conversation.girl.surname
+    br
+    = current_conversation.girl.username
+div.container
+  div.answer
+    = form_for message, remote: true do |f|
+      = f.text_field :body, placeholder: 'Type something here!', required: true, class: 'textarea', autocomplete: 'off'
+      = button_tag '', :type => 'submit', :class => 'send_message'
+        | Send&nbsp;
+        i.glyphicon.glyphicon-send
