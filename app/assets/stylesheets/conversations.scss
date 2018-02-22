@@ -6,16 +6,17 @@
 }
 
 ol.chat {
-  border: 1px solid white;
-  width: 40%;
+  #border: 1px solid white;
+  width: 60%;
   padding-right: 4%;
   margin-bottom: 40px;
 }
 
 .messages {
-  border: 1px solid yellow;
   word-wrap: break-word;
   text-align: left;
+  height: 420px;
+  overflow: scroll;
 }
 
 #chat {
@@ -23,13 +24,13 @@ ol.chat {
   flex-direction: row;  /* make main axis vertical */
   justify-content: center; /* center items vertically, in this case */
   align-items: flex-start;     /* center items horizontally, in this case */
-  border: 1px solid black;
+  #border: 1px solid black;
 }
 
 .box {
   border: 1px solid yellow;
-  width: 300px;
-  height: 320px;
+  width: 320px;
+  height: 360px;
   margin: 5px;
   text-align: center;     /* will center text in <p>, which is not a flex item */
 }
@@ -93,4 +94,9 @@ input.textarea {
     inset 0 10px rgba(255,255,255,0.2),
     inset 0 10px 20px rgba(255,255,255,0.25),
     inset 0 -15px 30px rgba(0,0,0,0.3);
+}
+
+.box img {
+  width: 300px;
+  height: 300px;
 }
