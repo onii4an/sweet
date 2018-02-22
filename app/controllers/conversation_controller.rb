@@ -13,6 +13,14 @@ class ConversationController < ApplicationController
     end
   end
 
+  def destroy
+    @conversation = Conversation.find(params[:id])
+    @conversation.boy.update('in_a_conversation'=> false, 'waiting' => true)
+    @conversation.girl.update('in_a_conversation'=> false, 'waiting' => true)
+    @conversation.destroy
+    redirect_to root_path
+  end
+
   private
 
   def check_user

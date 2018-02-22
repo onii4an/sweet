@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'main_admin' => 'main_admin#index'
   get 'conversation' => 'conversation#index'
   get 'conversations/:id' => 'conversations#show'
+  delete '/conversation/:id' => 'conversation#destroy'
   resources :messages
   root 'welcome#index'
 end
