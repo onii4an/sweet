@@ -16,7 +16,7 @@ ol.chat {
   word-wrap: break-word;
   text-align: left;
   height: 420px;
-  overflow: scroll;
+  overflow: auto;
 }
 
 #chat {
@@ -43,6 +43,14 @@ ol.chat {
   border-radius: .25em;
   margin: 5px 15px 5px 15px;
 }
+
+.messages p {
+  background-color: #6b6c886e;
+  padding: .2em .6em .3em;
+  font-weight: bold;
+  color: #fff;
+}
+
 
 input.textarea {
   position: fixed;
@@ -101,6 +109,6 @@ input.textarea {
   height: 300px;
 }
 
-H1#olo {
+H1#conversation {
   font-size: 40px;
 }
