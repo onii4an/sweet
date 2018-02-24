@@ -17,7 +17,7 @@ class ConversationsController < ApplicationController
   end
 
   def destroy
-    
+
   end
 
   private
@@ -27,6 +27,6 @@ class ConversationsController < ApplicationController
   end
 
   def check_user
-    redirect_to root_path unless conversation.boy_id == current_boy&.id || conversation.girl_id == current_girl&.id
+    redirect_to root_path unless conversation.boy_id == current_boy&.id || conversation.girl_id == current_girl&.id || current_admin
   end
 end

@@ -22,11 +22,12 @@ div#chat
     = image_tag(current_conversation.girl.avatar.url)
     br
     = current_conversation.girl.username
-div.container
-  div.answer
-    = form_for message, remote: true do |f|
-      = f.text_field :body, placeholder: 'Type something here!', required: true, class: 'textarea', autocomplete: 'off'
-      = button_tag '', :type => 'submit', :class => 'send_message'
-        | Send&nbsp;
-        i.glyphicon.glyphicon-send
-= current_conversation
+- unless current_admin
+  div.container
+    div.answer
+      = form_for message, remote: true do |f|
+        = f.text_field :body, placeholder: 'Type something here!', required: true, class: 'textarea', autocomplete: 'off'
+        = button_tag '', :type => 'submit', :class => 'send_message'
+          | Send&nbsp;
+          i.glyphicon.glyphicon-send
+  = current_conversation

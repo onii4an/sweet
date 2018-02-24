@@ -1,0 +1,2 @@
+module AdminSearchHelper
+end
