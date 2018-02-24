@@ -8,11 +8,11 @@ class AdminSearchController < ApplicationController
 
   def find_cvs
     if !params[:boy_nickname].empty? && !params[:girl_nickname].empty?
-      @conversations = Conversation.where(boy_id: Boy.find_by_username(params[:boy_nickname]).id, girl_id: Girl.find_by_username(params[:girl_nickname]).id)
+      @conversations = Conversation.where(boy_id: Boy.find_by_username(params[:boy_nickname])&.id, girl_id: Girl.find_by_username(params[:girl_nickname])&.id)
     elsif !params[:boy_nickname].empty?
-      @conversations = Conversation.where(boy_id: Boy.find_by_username(params[:boy_nickname]).id)
+      @conversations = Conversation.where(boy_id: Boy.find_by_username(params[:boy_nickname])&.id)
     elsif !params[:girl_nickname].empty?
-      @conversations = Conversation.where(girl_id: Girl.find_by_username(params[:girl_nickname]).id)
+      @conversations = Conversation.where(girl_id: Girl.find_by_username(params[:girl_nickname])&.id)
     else
       @conversations = Conversation.all
     end
