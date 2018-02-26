@@ -1,5 +1,5 @@
 div.btn
-  a href="/conversations/#{@conversation.id}" Leave the conversation
+  a href="/conversation/leave" Leave the conversation
 h1#conversation Conversation with #{Boy.find(@conversation.boy_id).username if current_girl}#{Girl.find(@conversation.girl_id).username if current_boy}
 div#chat
   div.box

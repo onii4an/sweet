@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get 'usr_search' => 'user_search#usr_search', as: :usr_search
   get 'conversation' => 'conversation#index'
   get 'conversations/:id' => 'conversations#show'
-  post '/conversation/:id' => 'conversation#leave'
+  get '/conversation/leave' => 'conversation#leave'
   resources :messages
   root 'welcome#index'
 end

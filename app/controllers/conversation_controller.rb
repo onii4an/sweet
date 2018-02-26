@@ -8,15 +8,17 @@ class ConversationController < ApplicationController
       @boy_id = Boy.where(waiting: true).offset(@offset_boy).first.id
       @offset_girl = rand(Girl.where(waiting: true).size)
       @girl_id = Girl.where(waiting: true).offset(@offset_girl).first.id
-      Conversation.create('boy_id' => @boy_id, 'girl_id' => @girl_id)
-      ConversationJob.perform_later('create', [@boy_id, @girl_id, Conversation.where('boy_id' => @boy_id, 'girl_id' => @girl_id).last.id])
+      if Conversation.create('boy_id' => @boy_id, 'girl_id' => @girl_id)
+        current_user.update('in_a_conversation'=> true, 'waiting' => false)
+        ConversationJob.perform_later('create', [@boy_id, @girl_id, Conversation.where('boy_id' => @boy_id, 'girl_id' => @girl_id).last.id])
+      end
     end
   end
 
   def leave
-    @conversation = Conversation.find(params[:id])
-    @conversation.boy.update('in_a_conversation'=> false, 'waiting' => true)
-    @conversation.girl.update('in_a_conversation'=> false, 'waiting' => true)
+    current_conversation.boy.update('in_a_conversation'=> false, 'waiting' => true)
+    current_conversation.girl.update('in_a_conversation'=> false, 'waiting' => true)
+    current_conversation.destroy
     redirect_to root_path
   end
 

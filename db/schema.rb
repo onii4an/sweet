@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20180221153304) do
     t.datetime "updated_at", null: false
     t.integer "boy_id"
     t.integer "girl_id"
+    t.index ["boy_id", "girl_id"], name: "index_conversations_on_boy_id_and_girl_id", unique: true
   end
 
   create_table "girls", force: :cascade do |t|
