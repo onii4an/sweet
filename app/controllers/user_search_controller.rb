@@ -10,7 +10,7 @@ class UserSearchController < ApplicationController
     elsif !params[:name].empty?
       @users = User.where(name: params[:name])
     elsif !params[:surname].empty?
-      @users = User.where(surname: params[:surname])
+      @user = User.where(surname: params[:surname])
     else
       @users = User.all
     end
