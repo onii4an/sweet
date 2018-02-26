@@ -10,4 +10,4 @@
 - if current_admin
   = render partial: 'users/user_for_admin', collection: find_usr, as: :user
 - else
-  = render find_usr, partial: 'users/user'
+  = render partial: 'users/user', collection: find_usr, as: :user
