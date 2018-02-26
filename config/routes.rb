@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'main_girl' => 'main_girl#index'
   get 'main_admin' => 'main_admin#index'
   get 'cv_serch' => 'admin_search#cv_search', as: :cv_search
+  get 'usr_search' => 'user_search#usr_search', as: :usr_search
   get 'conversation' => 'conversation#index'
   get 'conversations/:id' => 'conversations#show'
   post '/conversation/:id' => 'conversation#leave'
