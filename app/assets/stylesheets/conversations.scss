@@ -35,12 +35,12 @@ ol.chat {
   text-align: center;     /* will center text in <p>, which is not a flex item */
 }
 
-.messages_text {
+.messages_text, {
   background-color: #6b6c886e;
   padding: .2em .6em .3em;
   font-weight: bold;
   color: #fff;
-  border-radius: .25em;
+  border-radius: 12px;
   margin: 5px 15px 5px 15px;
 }
 

@@ -1,5 +1,13 @@
 h1 Conversation controller
 .conversation_create
-div.btn
-H2 
-  a href="/conversations/#{current_conversation.id}" Go to conversation
+.conversation_buttons
+  -if current_conversation
+    div.btn_go_to_conversation
+      a href="/conversations/#{current_conversation.id}" Go to conversation with #{current_conversation.girl.username}
+    div.btn_chose_another_conversation
+      a href="#" Choose another person
+  -elsif !current_conversation
+    div.btn_go_to_conversation
+      a href="/conversation" UPDATE SEARCH
+    div.btn_chose_another_conversation
+      = link_to 'Back to main page', root_path

@@ -14,9 +14,8 @@ class ConversationController < ApplicationController
   end
 
   def leave
-    @conversation = Conversation.find(params[:id])
-    @conversation.boy.update('in_a_conversation'=> false, 'waiting' => true)
-    @conversation.girl.update('in_a_conversation'=> false, 'waiting' => true)
+    current_conversation.boy.update('in_a_conversation'=> false, 'waiting' => true)
+    current_conversation.girl.update('in_a_conversation'=> false, 'waiting' => true)
     redirect_to root_path
   end
 

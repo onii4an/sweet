@@ -1,3 +1,36 @@
 // Place all the styles related to the conversation controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.conversation_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 12px;
+  a {
+    color: #fff;
+    font-weight: bold;
+  }
+  a:hover {
+    color: #fff;
+  }
+}
+
+.btn_go_to_conversation {
+  border: 1px solid yellow;
+  width: 320px;
+  height: 35px;
+  margin-right: 10px;
+  border-radius: 12px;
+  background-color: #6b6c886e;
+  padding: .4em .6em .3em;
+}
+
+.btn_chose_another_conversation {
+  border: 1px solid yellow;
+  width: 320px;
+  height: 35px;
+  border-radius: 12px;
+  background-color: #6b6c886e;
+  padding: .4em .6em .3em;
+}
