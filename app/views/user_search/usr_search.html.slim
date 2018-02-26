@@ -1,0 +1,10 @@
+= form_tag usr_search_path, method: :get
+  p
+    p name
+    = text_field_tag :name, ''
+    br
+    p surname
+    = text_field_tag :surname, ''
+    br
+    = submit_tag 'Find', name: nil
+= render find_usr, partial: 'users/user'

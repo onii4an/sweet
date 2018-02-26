@@ -6,3 +6,12 @@ a= link_to 'Logout', destroy_boy_session_path, method: :delete
 a= link_to 'Account settings', edit_boy_registration_path
 br
 a= link_to 'Start conversation with random girl', conversation_path
+= form_tag usr_search_path, method: :get
+  p
+    p name
+    = text_field_tag :name, ''
+    br
+    p surname
+    = text_field_tag :surname, ''
+    br
+    =submit_tag 'Find', name: nil
