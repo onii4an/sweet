@@ -7,5 +7,6 @@ class MainGirlController < ApplicationController
 
   def check_girl
     redirect_to root_path unless current_girl
+    current_girl.update('in_a_conversation'=> false, 'waiting' => false)
   end
 end
