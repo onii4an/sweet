@@ -3,7 +3,7 @@ h1 Conversation controller
 .conversation_buttons
   -if current_conversation
     div.btn_go_to_conversation
-      a href="/conversations/#{current_conversation.id}" Go to conversation with #{current_conversation.girl.username}
+      a href="/conversations/#{current_conversation.id}" Go to conversation with #{current_conversation.girl.username if current_girl}#{current_conversation.boy.username if current_boy}
     div.btn_chose_another_conversation
       a href="#" Choose another person
   -elsif !current_conversation

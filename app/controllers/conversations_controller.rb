@@ -5,7 +5,6 @@ class ConversationsController < ApplicationController
 
   def show
     conversation
-    current_user.update('in_a_conversation'=> true, 'waiting' => false)
   end
 
   def conversation_messages
