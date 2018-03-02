@@ -6,11 +6,11 @@ class UserSearchController < ApplicationController
 
   def find_usr
     if !params[:name].empty? && !params[:surname].empty?
-      @users = User.where(name: params[:name], surname: params[:surname])
+      @users = User.search_name(params[:name]).search_surname(params[:surname]).all
     elsif !params[:name].empty?
-      @users = User.where(name: params[:name])
+      @users = User.search_name(params[:name]).all
     elsif !params[:surname].empty?
-      @user = User.where(surname: params[:surname])
+      @user = User.search_surname(params[:surname]).all
     else
       @users = User.all
     end
