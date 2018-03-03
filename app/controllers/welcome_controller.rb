@@ -1,7 +1,9 @@
 class WelcomeController < ApplicationController
-  before_action :check_user
+  before_action :check_user, only: :index
 
   def index; end
+
+  def rules; end
 
   private
 

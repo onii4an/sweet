@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     delete 'logout_admin', to: 'devise/sessions#destroy', as: :destroy_admin_session
   end
   get 'welcome/index'
+  get 'rules' => 'welcome#rules'
   get 'main' => 'logged#index'
   get 'main_boy' => 'main_boy#index'
   get 'main_girl' => 'main_girl#index'

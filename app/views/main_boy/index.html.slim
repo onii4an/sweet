@@ -1,9 +1,6 @@
 h1 You at boy page
-p logged as #{current_boy.username}
 p Boys online #{Boy.online.count}
 p Girls online #{Girl.online.count}
-a= link_to 'Logout', destroy_boy_session_path, method: :delete
-a= link_to 'Account settings', edit_boy_registration_path
 br
 a= link_to 'Start conversation with random girl', conversation_path
 = form_tag usr_search_path, method: :get
