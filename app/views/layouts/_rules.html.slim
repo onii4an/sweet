@@ -1,0 +1,6 @@
+- if current_page?(controller: '/welcome', action: :rules)
+  li.active
+    = link_to 'Rules', rules_path
+- else
+  li
+    = link_to 'Rules', rules_path

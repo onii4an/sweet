@@ -1,18 +1,17 @@
-- if current_admin
-  p You loggend as admin
-  a= link_to 'Home', main_admin_path
-  a= link_to 'Logout', destroy_admin_session_path, method: :delete
-- elsif current_boy
-  p You logged as
-    <a href="users/#{current_boy.id}"> #{current_boy.username}
-  a= link_to 'Home', main_boy_path
-  a= link_to 'Logout', destroy_boy_session_path, method: :delete
-  a= link_to 'Account settings', edit_boy_registration_path
-- elsif current_girl
-  p You logged as
-    <a href="users/#{current_girl.id}"> #{current_girl.username}
-  a= link_to 'Home', main_girl_path
-  a= link_to 'Logout', destroy_girl_session_path, method: :delete
-  a= link_to 'Account settings', edit_girl_registration_path
-- unless current_page?(controller: '/welcome', action: :rules)
-  a= link_to 'Rules', rules_path
+nav.navbar.navbar-default.navbar-fixed-top
+  .container-fluid
+    - if current_admin
+      .navbar-header
+        =link_to 'Sweet', main_admin_path, class: "navbar-brand"
+      .collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-left
+          p.navbar-text Admin
+        ul.nav.navbar-nav.navbar-right
+          li
+            = link_to 'Logout', destroy_admin_session_path, method: :delete
+    - elsif current_boy
+      = render 'layouts/boy_header'
+    - elsif current_girl
+      = render 'layouts/girl_header'
+    - else
+      = render 'layouts/guest_header'

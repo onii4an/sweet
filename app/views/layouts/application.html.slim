@@ -9,8 +9,9 @@ html
   body
     div class="container text-center"
       = render 'layouts/header'
-      p.notice
-        = notice
+      p
+        .alert.alert-succes
+          = notice
       p.alert
         = alert
       = yield

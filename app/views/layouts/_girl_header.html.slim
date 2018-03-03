@@ -1,0 +1,17 @@
+.navbar-header
+  = link_to 'Sweet', main_girl_path, class: "navbar-brand"
+.collapse.navbar-collapse
+  ul.nav.navbar-nav.navbar-left
+    = render "layouts/rules"
+  ul.nav.navbar-nav.navbar-right
+    li.dropdown
+      a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+        | #{current_girl.username}
+        span.caret
+      ul.dropdown-menu
+        li
+          = link_to 'Profile', users_path(current_girl.id)
+        li
+          = link_to 'Account settings', edit_girl_registration_path
+        li
+          = link_to 'Logout', destroy_girl_session_path, method: :delete
