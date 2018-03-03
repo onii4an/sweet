@@ -2,9 +2,9 @@ class ConversationsController < ApplicationController
   before_action :check_user
   helper_method :message
   helper_method :conversation_messages
+  helper_method :conversation
 
   def show
-    conversation
   end
 
   def conversation_messages
