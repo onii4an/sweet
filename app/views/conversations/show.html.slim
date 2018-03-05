@@ -1,7 +1,6 @@
 - unless current_admin
-  div.btn
+  div.btn.btn-danger
     a href="/conversation/leave" Leave the conversation
-  h1#conversation Conversation with #{Boy.find(conversation.boy_id).username if current_girl}#{Girl.find(conversation.girl_id).username if current_boy}
 - if current_admin
   h1#convarsation Convarsation between #{Girl.find(conversation.girl_id).name} and #{Boy.find(conversation.boy_id).name}
 div#chat
@@ -26,4 +25,3 @@ div#chat
         = button_tag '', :type => 'submit', :class => 'send_message'
           | Send&nbsp;
           i.glyphicon.glyphicon-send
-  = current_conversation
