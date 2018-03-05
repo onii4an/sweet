@@ -7,10 +7,10 @@ module ApplicationCable
       self.current_user = User.find_by(id: cookies[:user_id])
       if current_user
         if current_user.type == "Boy"
-          self.current_conversation = Conversation.where(boy_id: current_user.id)&.last
+          self.current_conversation = Conversation.where(boy_id: current_user.id, active: true)&.last
         end
         if current_user.type == "Girl"
-          self.current_conversation = Conversation.where(girl_id: current_user.id)&.last
+          self.current_conversation = Conversation.where(girl_id: current_user.id, active: true)&.last
         end
       end
       reject_unauthorized_connection unless current_user
