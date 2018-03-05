@@ -23,16 +23,26 @@ background-size: cover;
 }
 
 .container { 
-  margin-top: 12px;
+  margin-top: 0px;
   color:#f05f40;
   font-size: 15px;
   font-style: italic;
-  border: 1px solid green;
+  #border: 1px solid green;
   font-family: 'Times New Roman', Times, serif;
+}
+
+p.alert {
+  padding: 0px;
 }
 
 .btn-group {
   margin: 5px 5px 5px 5px;
+}
+
+.btn.btn-danger a {
+  color:#ffffff;
+  font-size: 20px;
+  text-shadow: 3px 2px 2px grey;
 }
 
 h1 {
@@ -103,3 +113,7 @@ img {
       background-color: transparent;
       border:0px;
 } /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+
+.navbar-fixed-top {
+  height: 10px;
+}
