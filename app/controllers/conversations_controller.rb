@@ -15,10 +15,6 @@ class ConversationsController < ApplicationController
     @message ||= Message.new
   end
 
-  def destroy
-
-  end
-
   private
 
   def conversation
@@ -26,6 +22,11 @@ class ConversationsController < ApplicationController
   end
 
   def check_user
-    redirect_to root_path unless conversation.boy_id == current_boy&.id || conversation.girl_id == current_girl&.id || current_admin
+    # poop
+    if conversation.boy_id == current_boy&.id && conversation.active || conversation.girl_id == current_girl&.id && conversation.active
+    elsif current_admin
+    else
+      redirect_to root_path
+    end
   end
 end
