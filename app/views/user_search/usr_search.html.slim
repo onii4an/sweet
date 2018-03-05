@@ -8,6 +8,21 @@
     br
     = submit_tag 'Find', name: nil
 - if current_admin
-  = render partial: 'users/user_for_admin', collection: find_usr, as: :user
+  table.table
+    tr
+      td Id
+      td Name
+      td Surname
+      td Age
+      td Gender
+      td Username
+      td Email
+    = render partial: 'users/user_for_admin', collection: find_usr, as: :user
 - else
-  = render partial: 'users/user', collection: find_usr, as: :user
+  table.table
+    tr
+      td Name
+      td Surname
+      td Age
+      td Gender
+    = render partial: 'users/user', collection: find_usr, as: :user

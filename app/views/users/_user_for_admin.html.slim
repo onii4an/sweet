@@ -1,8 +1,8 @@
-h3 Name #{user.name}
-h3 Surname #{user.surname}
-h3 Age #{user.age}
-h3 Gender #{user.type}
-h3 Nickname #{user.username}
-h3 Conversations
-= render Conversation.where(boy_id: user.id) if user.type == "Boy"
-= render Conversation.where(girl_id: user.id) if user.type == "Girl"
+tr
+  td #{user.id}
+  td #{user.name}
+  td #{user.surname}
+  td #{user.age}
+  td #{user.type}
+  td #{user.username}
+  td #{user.email}

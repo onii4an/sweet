@@ -1,9 +1,9 @@
-= form_tag cv_search_path, method: :get
+= form_tag usr_search_path, method: :get
   p
-    p boy nickname
-    = text_field_tag :boy_nickname, ''
+    p name
+    = text_field_tag :name, ''
     br
-    p gilr nickname
-    = text_field_tag :girl_nickname, ''
+    p surname
+    = text_field_tag :surname, ''
     br
     = submit_tag "Find", name: nil
