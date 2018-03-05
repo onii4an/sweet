@@ -22,10 +22,7 @@ class ConversationsController < ApplicationController
   end
 
   def check_user
-    # poop
-    if conversation.boy_id == current_boy&.id && conversation.active || conversation.girl_id == current_girl&.id && conversation.active
-    elsif current_admin
-    else
+    unless conversation.boy_id == current_boy&.id && conversation.active || conversation.girl_id == current_girl&.id && conversation.active || current_admin
       redirect_to root_path
     end
   end
