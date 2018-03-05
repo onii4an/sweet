@@ -1,6 +1,6 @@
 - unless current_admin
-  .btn.btn-danger
-    a href="/conversation/leave" Leave the conversation
+  = button_to "Leave the conversation", leave_cv_path, method: :post, class: [:btn, "btn-danger"]
+    / a href="/conversation/leave" Leave the conversation
 - if current_admin
   h1#convarsation Convarsation between #{Girl.find(conversation.girl_id).name} and #{Boy.find(conversation.boy_id).name}
 #chat
