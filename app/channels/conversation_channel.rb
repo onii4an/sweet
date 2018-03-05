@@ -4,6 +4,7 @@ class ConversationChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
+    current_user.update waiting: false
     # Any cleanup needed when channel is unsubscribed
   end
 end
