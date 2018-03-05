@@ -1,25 +1,25 @@
 - unless current_admin
-  div.btn.btn-danger
+  .btn.btn-danger
     a href="/conversation/leave" Leave the conversation
 - if current_admin
   h1#convarsation Convarsation between #{Girl.find(conversation.girl_id).name} and #{Boy.find(conversation.boy_id).name}
-div#chat
-  div.box
+#chat
+  .box
     p #Boy_block
     = image_tag(conversation.boy.avatar.url)
     br
     = conversation.boy.username
   ol.chat
-    div.messages
+    .messages
       = render conversation_messages
-  div.box
+  .box
     p #Girl_block
     = image_tag(conversation.girl.avatar.url)
     br
     = conversation.girl.username
 - unless current_admin
-  div.container
-    div.answer
+  .container
+    .answer
       = form_for message, remote: true do |f|
         = f.text_field :body, placeholder: 'Type something here!', required: true, class: 'textarea', autocomplete: 'off'
         = button_tag '', :type => 'submit', :class => 'send_message'
