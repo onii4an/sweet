@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show', as: :users
   get 'conversation' => 'conversation#index'
   get 'conversations/:id' => 'conversations#show'
-  get '/conversation/leave' => 'conversation#leave'
+  post '/conversation/leave' => 'conversation#leave', as: :leave_cv
   resources :messages
   root 'welcome#index'
 end
