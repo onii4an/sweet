@@ -10,9 +10,10 @@ class ConversationJob < ApplicationJob
   def create(boy_id, girl_id, conversation_id)
     # conversation_boy = Array.wrap([conversation_id, girl_id])
     # conversation_girl = Array.wrap([conversation_id, boy_id])
-    ActionCable.server.broadcast_to "user_#{girl_id}", action: :create, id: conversation_id
-    ActionCable.server.broadcast_to "user_#{boy_id}", action: :create, id: conversation_id
-    Boy.find(boy_id).update(waiting: false)
-    Girl.find(girl_id).update(waiting: false)
+    sleep 2
+    ActionCable.server.broadcast "user_#{girl_id}", action: :create, id: conversation_id
+    ActionCable.server.broadcast "user_#{boy_id}", action: :create, id: conversation_id
+    Boy.find(boy_id).update(waiting: false, in_a_conversation: true)
+    Girl.find(girl_id).update(waiting: false, in_a_conversation: true)
   end
 end
