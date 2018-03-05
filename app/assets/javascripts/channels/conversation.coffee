@@ -8,7 +8,10 @@ App.conversation = App.cable.subscriptions.create "ConversationChannel",
   received: (data) ->
     console.log(Conversation[data['action']](data))
     # Called when there's incoming data on the websocket for this channel
+
 Conversation ={
   create: (data) ->
     window.location.replace("/conversations/" + [data['id']])
+  unsubscribed: (data) ->
+    $('.messages').append('<h3>Interlocutor gone.</h3><div.message_text><a href="/">Go to main page</a><br><a href="/conversation">Search another interlocutor</a></div>')
 }

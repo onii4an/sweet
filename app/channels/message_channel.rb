@@ -4,6 +4,11 @@ class MessageChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
+    ActionCable.server.broadcast "user_#{current_conversation.boy_id}", action: :unsubscribed
+    ActionCable.server.broadcast "user_#{current_conversation.girl_id}", action: :unsubscribed
+    Boy.find(current_conversation.boy_id).update in_a_conversation: false
+    Girl.find(current_conversation.girl_id).update in_a_conversation: false
+    current_conversation.update active: false
     # Any cleanup needed when channel is unsubscribed
   end
 end
