@@ -13,22 +13,29 @@
       |Age:&nbsp;
       = conversation.boy.age
       br
-      |Intro:&nbsp;
-      = conversation.boy.intro
+      |Intro:
+      .intro
+        |"
+        = conversation.boy.intro
+        |"
   ol.chat
     .messages
       = render conversation_messages
   .box
     = image_tag(conversation.girl.avatar.url)
     .box_user_data
-      |Nickname:&nbsp;
-      = conversation.girl.username
-      br
-      |Age:&nbsp;
-      = conversation.girl.age
-      br
-      |Intro:&nbsp;
-      = conversation.girl.intro
+      .box_user_data_girl_block
+        |Nickname:&nbsp;
+        = conversation.girl.username
+        br
+        |Age:&nbsp;
+        = conversation.girl.age
+        br
+        |Intro:
+      .intro
+        |"
+        = conversation.girl.intro
+        |"
 - unless current_admin
   .container
     .answer

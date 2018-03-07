@@ -119,6 +119,20 @@ H1#conversation {
 }
 
 .box_user_data {
-  border: 1px solid white;
-  margin: 2px 5px 0px 5px;
+  background-color: #33367d52;
+  #background-color: #6b6c882e;
+  text-shadow: 3px 3px 2px black;
+  height:168px;
+  margin: 2px 1px 0px 1px;
+  .intro {
+    color: #fff;
+    padding-top:6px;
+    text-align: center;
+    text-shadow: 3px 3px 2px black;
+    padding: 3px 2px 1px 2px;
+  }
+  .box_user_data_girl_block {
+    text-shadow: 1px 1px 0px #000000c9;;
+    color: #e45c3e;;
+  }
 }
