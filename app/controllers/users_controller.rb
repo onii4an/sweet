@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def show; end
 
   def user
-    @user ||= User.find(params[:id]) unless User.find(params[:id]).type == "Admin"
+    @user ||= User.find(params[:id]) unless User.find(params[:id]).type == 'Admin'
   end
 
   private

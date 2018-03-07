@@ -3,7 +3,7 @@ class ConversationController < ApplicationController
 
   def index
     current_user.update('waiting' => true)
-    if Boy.where(waiting: true).size > 0 && Girl.where(waiting: true).size > 0
+    if !Boy.where(waiting: true).empty? && !Girl.where(waiting: true).empty?
       @offset_boy = rand(Boy.where(waiting: true).size)
       @boy_id = Boy.where(waiting: true).offset(@offset_boy).first.id
       @offset_girl = rand(Girl.where(waiting: true).size)

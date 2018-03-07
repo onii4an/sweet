@@ -4,7 +4,7 @@ class MessageChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
-    if current_user.type != "Admin" && current_conversation.present?
+    if current_user.type != 'Admin' && current_conversation.present?
       ActionCable.server.broadcast "user_#{current_conversation.boy_id}", action: :unsubscribed
       ActionCable.server.broadcast "user_#{current_conversation.girl_id}", action: :unsubscribed
       Boy.find(current_conversation.boy_id).update in_a_conversation: false
