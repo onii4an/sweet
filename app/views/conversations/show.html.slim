@@ -7,16 +7,28 @@
   .box
     p #Boy_block
     = image_tag(conversation.boy.avatar.url)
-    br
-    = conversation.boy.username
+    .box_user_data
+      |Nickname:&nbsp;
+      = conversation.boy.username
+      br
+      |Age:&nbsp;
+      = conversation.boy.age
+      br
+      |Intro:&nbsp;
   ol.chat
     .messages
       = render conversation_messages
   .box
     p #Girl_block
     = image_tag(conversation.girl.avatar.url)
-    br
-    = conversation.girl.username
+    .box_user_data
+      |Nickname:&nbsp;
+      = conversation.girl.username
+      br
+      |Age:&nbsp;
+      = conversation.girl.age
+      br
+      |Intro:&nbsp;
 - unless current_admin
   .container
     .answer
