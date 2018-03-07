@@ -5,7 +5,6 @@
   h1#convarsation Convarsation between #{Girl.find(conversation.girl_id).name} and #{Boy.find(conversation.boy_id).name}
 #chat
   .box
-    p #Boy_block
     = image_tag(conversation.boy.avatar.url)
     .box_user_data
       |Nickname:&nbsp;
@@ -15,11 +14,11 @@
       = conversation.boy.age
       br
       |Intro:&nbsp;
+      = conversation.boy.intro
   ol.chat
     .messages
       = render conversation_messages
   .box
-    p #Girl_block
     = image_tag(conversation.girl.avatar.url)
     .box_user_data
       |Nickname:&nbsp;
@@ -29,6 +28,7 @@
       = conversation.girl.age
       br
       |Intro:&nbsp;
+      = conversation.girl.intro
 - unless current_admin
   .container
     .answer
