@@ -1,49 +1,50 @@
-h2
-  | Sign up
-br
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :username
-    br
-    = f.text_field :username
-  .field
-    = f.label :avatar do
-    = f.file_field :avatar
-    = f.hidden_field :avatar_cache
-  .field
-    = f.label :name
-    br
-    = f.text_field :name
-  .field
-    = f.label :surname
-    br
-    = f.text_field :surname
-  .field
-    = f.label :age 
-    = f.select :age, options_for_select(18..40)
-  / .field
-    = f.radio_button :sex, "male"
-    p Male
-    = f.radio_button :sex, "female"
-    p Female
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      em
-        | (
-        = @minimum_password_length
-        |  characters minimum)
-    br
-    = f.password_field :password, autocomplete: "off"
-  .field
-    = f.label :password_confirmation
-    br
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.registration_block
+  h2
+    | Sign up
+  br
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    .field
+      = f.label :email
+      br
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    .field
+      = f.label :username
+      br
+      = f.text_field :username
+    .field
+      = f.label :avatar do
+      = f.file_field :avatar
+      = f.hidden_field :avatar_cache
+    .field
+      = f.label :name
+      br
+      = f.text_field :name
+    .field
+      = f.label :surname
+      br
+      = f.text_field :surname
+    .field
+      = f.label :age 
+      = f.select :age, options_for_select(18..40)
+    / .field
+      = f.radio_button :sex, "male"
+      p Male
+      = f.radio_button :sex, "female"
+      p Female
+    .field
+      = f.label :password
+      - if @minimum_password_length
+        em
+          | (
+          = @minimum_password_length
+          |  characters minimum)
+      br
+      = f.password_field :password, autocomplete: "off"
+    .field
+      = f.label :password_confirmation
+      br
+      = f.password_field :password_confirmation, autocomplete: "off"
+    .actions
+      = f.submit "Sign up"
+  = render "devise/shared/links"

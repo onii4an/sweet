@@ -70,10 +70,6 @@ hr.bottom {
   border-width: 2px;
 }
 
-input[type="file"] {
-  margin-left: 482px;
-}
-
 img {
   width: 230px;
   height: 230px;
@@ -83,8 +79,19 @@ img {
   -khtml-border-radius: 12px; //rounding of corners (Safari)
 }
 
+.edit_block, .registration_block {
+  padding-left: 40%;
+  padding-right: 40%;
+  text-align: left;
+}
+
 .edit_avatar {
   margin-bottom: 35px;
+  text-align: left;
+}
+
+#edit_boy {
+  text-align: left;
 }
 
 .remove_avatar_buttom {
