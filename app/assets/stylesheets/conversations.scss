@@ -52,8 +52,14 @@ ol.chat {
   height: 500px;
   margin: 5px;
   .search {
+    border: 10px ridge #6b6c842e;
+    background-color: #33367d52;
+    margin: 2px 1px 0px 1px;
   }
   .online {
+    margin: 2px 1px 0px 1px;
+    border: 10px ridge #6b6c842e;
+    background-color: #33367d52;
     margin-top: 90px;
   }
 }
