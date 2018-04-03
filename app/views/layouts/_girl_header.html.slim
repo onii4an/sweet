@@ -15,3 +15,6 @@
           = link_to 'Account settings', edit_girl_registration_path
         li
           = link_to 'Logout', destroy_girl_session_path, method: :delete
+  .conversation_buttons
+    .btn_go_to_conversation
+      a = link_to 'Start conversation with random boy', conversation_path

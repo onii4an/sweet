@@ -41,6 +41,24 @@ ol.chat {
 }
 
 .box_show {
+  #border: 2px solid green;
+  display: flex;           /* establish flex container */
+}
+
+.box_show_other_data {
+  #border: 10px ridge #6b6c842e;
+  border-radius: 12px;
+  width: 300px;
+  height: 500px;
+  margin: 5px;
+  .search {
+  }
+  .online {
+    margin-top: 90px;
+  }
+}
+
+.box_show_user_data {
   border: 10px ridge #6b6c842e;
   border-radius: 12px;
   width: 250px;

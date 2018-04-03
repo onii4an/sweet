@@ -1,23 +1,39 @@
 .box_show
-  = image_tag(user.avatar.url)
-  .box_user_data
-    |Nickname:&nbsp;
-    = user.username
+  .box_show_user_data
+    = image_tag(user.avatar.url)
+    .box_user_data
+      |Nickname:&nbsp;
+      = user.username
+      br
+      |Name:&nbsp;
+      = user.name
+      br
+      |Surname:&nbsp;
+      = user.surname
+      br
+      |Age:&nbsp;
+      = user.age
+      br
+      |Gender:&nbsp;
+      = user.type
+      br
+      |Intro:
+      .intro
+        |"
+        = user.intro
+        |"
+  .box_show_other_data
+    .online
+      p Boys online #{Boy.online.count}
+      p Girls online #{Girl.online.count}
     br
-    |Name:&nbsp;
-    = user.name
-    br
-    |Surname:&nbsp;
-    = user.surname
-    br
-    |Age:&nbsp;
-    = user.age
-    br
-    |Gender:&nbsp;
-    = user.type
-    br
-    |Intro:
-    .intro
-      |"
-      = user.intro
-      |"
+    .search
+      = form_tag usr_search_path, method: :get
+        p
+          p name
+          = text_field_tag :name, ''
+          br
+          p surname
+          = text_field_tag :surname, ''
+          br
+          =submit_tag 'Find', name: nil
