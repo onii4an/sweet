@@ -1,4 +1,23 @@
-h2 Name #{user.name}
-h2 Surname #{user.surname}
-h2 Age #{user.age}
-h2 Gender #{user.type}
+.box_show
+  = image_tag(user.avatar.url)
+  .box_user_data
+    |Nickname:&nbsp;
+    = user.username
+    br
+    |Name:&nbsp;
+    = user.name
+    br
+    |Surname:&nbsp;
+    = user.surname
+    br
+    |Age:&nbsp;
+    = user.age
+    br
+    |Gender:&nbsp;
+    = user.type
+    br
+    |Intro:
+    .intro
+      |"
+      = user.intro
+      |"

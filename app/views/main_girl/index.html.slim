@@ -2,7 +2,9 @@ h1 You at girl page
 p Boys online #{Boy.online.count}
 p Girls online #{Girl.online.count}
 br
-a= link_to 'Start conversation with random boy', conversation_path
+.conversation_buttons
+  .btn_go_to_conversation
+    a = link_to 'Start conversation with random boy', conversation_path
 = form_tag usr_search_path, method: :get
   p
     p name

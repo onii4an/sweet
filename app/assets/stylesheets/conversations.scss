@@ -34,10 +34,22 @@ ol.chat {
 .box {
   border: 10px ridge #6b6c842e;
   border-radius: 12px;
-  width: 320px;
+  width: 250px;
   height: 410px;
   margin: 5px;
   text-align: center;     /* will center text in <p>, which is not a flex item */
+}
+
+.box_show {
+  border: 10px ridge #6b6c842e;
+  border-radius: 12px;
+  width: 250px;
+  height: 500px;
+  margin: 5px;
+  text-align: center;     /* will center text in <p>, which is not a flex item */
+  .box_user_data {
+    height: 248px;
+  }
 }
 
 .messages_text, {
