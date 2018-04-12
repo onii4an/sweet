@@ -40,6 +40,15 @@ ol.chat {
   text-align: center;     /* will center text in <p>, which is not a flex item */
 }
 
+.main_block_show {
+  display: flex;
+}
+
+.block2 {
+  padding-top:50px;
+  padding-left:50px;
+}
+
 .box_show {
   #border: 2px solid green;
   display: flex;           /* establish flex container */

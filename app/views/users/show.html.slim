@@ -1,39 +1,42 @@
-.box_show
-  .box_show_user_data
-    = image_tag(user.avatar.url)
-    .box_user_data
-      |Nickname:&nbsp;
-      = user.username
-      br
-      |Name:&nbsp;
-      = user.name
-      br
-      |Surname:&nbsp;
-      = user.surname
-      br
-      |Age:&nbsp;
-      = user.age
-      br
-      |Gender:&nbsp;
-      = user.type
-      br
-      |Intro:
-      .intro
-        |"
-        = user.intro
-        |"
-  .box_show_other_data
-    .online
-      p Boys online #{Boy.online.count}
-      p Girls online #{Girl.online.count}
+.main_block_show
+  .box_show
+    .box_show_user_data
+      = image_tag(user.avatar.url)
+      .box_user_data
+        |Nickname:&nbsp;
+        = user.username
+        br
+        |Name:&nbsp;
+        = user.name
+        br
+        |Surname:&nbsp;
+        = user.surname
+        br
+        |Age:&nbsp;
+        = user.age
+        br
+        |Gender:&nbsp;
+        = user.type
+        br
+        |Intro:
+        .intro
+          |"
+          = user.intro
+          |"
+  .block2
+    h1 You at girl page
+    p Boys online #{Boy.online.count}
+    p Girls online #{Girl.online.count}
     br
-    .search
-      = form_tag usr_search_path, method: :get
-        p
-          p name
-          = text_field_tag :name, ''
-          br
-          p surname
-          = text_field_tag :surname, ''
-          br
-          =submit_tag 'Find', name: nil
+    .conversation_buttons
+      .btn_go_to_conversation
+        a = link_to 'Start conversation with random boy', conversation_path
+    = form_tag usr_search_path, method: :get
+      p
+        p name
+        = text_field_tag :name, ''
+        br
+        p surname
+        = text_field_tag :surname, ''
+        br
+        =submit_tag 'Find', name: nil
