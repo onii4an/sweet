@@ -1,6 +1,7 @@
 tr
   td #{user.id}
-  td #{user.name}
+  td
+    a href="/users/#{user.id}" #{user.name}
   td #{user.surname}
   td #{user.age}
   td #{user.type}
