@@ -28,7 +28,10 @@
     br
     .conversation_buttons
       .btn_go_to_conversation
-        a = link_to 'Start conversation with random boy', conversation_path
+        - if current_boy
+          a = link_to 'Start conversation with random girl', conversation_path
+        -if current_girl
+          a = link_to 'Start conversation with random boy', conversation_path
     = form_tag usr_search_path, method: :get
       p
         p name
