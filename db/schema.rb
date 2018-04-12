@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307203143) do
+ActiveRecord::Schema.define(version: 20180412143931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,9 @@ ActiveRecord::Schema.define(version: 20180307203143) do
   create_table "complaints", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "sender_id"
+    t.integer "bad_id"
+    t.boolean "active", default: true
   end
 
   create_table "conversations", force: :cascade do |t|
@@ -63,6 +66,16 @@ ActiveRecord::Schema.define(version: 20180307203143) do
     t.bigint "conversation_id"
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "reported_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "text", null: false
+    t.index ["reported_id"], name: "index_reports_on_reported_id"
+    t.index ["sender_id"], name: "index_reports_on_sender_id"
   end
 
   create_table "users", force: :cascade do |t|

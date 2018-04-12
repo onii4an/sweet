@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'main_admin' => 'main_admin#index'
   get 'cv_serch' => 'admin_search#cv_search', as: :cv_search
   get 'usr_search' => 'user_search#usr_search', as: :usr_search
+  # post 'report' => 'complaints#new', as: :report
+  resource :complaint, only: :create, as: :report
   get 'users/:id' => 'users#show', as: :users
   get 'conversation' => 'conversation#index'
   get 'conversations/:id' => 'conversations#show'

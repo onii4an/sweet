@@ -10,6 +10,13 @@
       |Nickname:&nbsp;
       = conversation.boy.username
       br
+      - if current_girl
+        .complaint
+          = form_tag report_path, method: :post
+            = hidden_field_tag :sender_id, current_user.id
+            = hidden_field_tag :bad_id, conversation.boy.id
+            = submit_tag 'Report user', name: nil
+      br
       |Age:&nbsp;
       = conversation.boy.age
       br
@@ -27,6 +34,13 @@
       .box_user_data_girl_block
         |Nickname:&nbsp;
         = conversation.girl.username
+        br
+        - if current_boy
+          .complaint
+            = form_tag report_path, method: :post
+              = hidden_field_tag :sender_id, current_user.id
+              = hidden_field_tag :bad_id, conversation.girl.id
+              = submit_tag 'Report user', name: nil
         br
         |Age:&nbsp;
         = conversation.girl.age
