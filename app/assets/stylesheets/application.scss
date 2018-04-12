@@ -17,6 +17,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.online {
+  line-height: 0.5;
+  padding-top: 12px;
+  color: #158eea;
+}
+
 
 body { 
 background: url('/assets/header.jpg') no-repeat center center fixed; 

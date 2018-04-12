@@ -1,5 +1,5 @@
 .navbar-header
-  = link_to 'Sweet', main_girl_path, class: "navbar-brand"
+  = link_to 'Sweet', users_path(current_girl.id), class: "navbar-brand"
 .collapse.navbar-collapse
   ul.nav.navbar-nav.navbar-left
     = render "layouts/rules"
@@ -15,3 +15,6 @@
           = link_to 'Account settings', edit_girl_registration_path
         li
           = link_to 'Logout', destroy_girl_session_path, method: :delete
+  .online
+    p Boys online #{Boy.online.count}
+    p Girls online #{Girl.online.count}
