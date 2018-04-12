@@ -6,13 +6,13 @@ class UserSearchController < ApplicationController
 
   def find_usr
     if !params[:name].empty? && !params[:surname].empty?
-      @users = User.search_name(params[:name]).search_surname(params[:surname]).all
+      @users = User.where(type: ['Boy', 'Girl']).search_name(params[:name]).search_surname(params[:surname]).all
     elsif !params[:name].empty?
-      @users = User.search_name(params[:name]).all
+      @users = User.where(type: ['Boy', 'Girl']).search_name(params[:name]).all
     elsif !params[:surname].empty?
-      @user = User.search_surname(params[:surname]).all
+      @user = User.where(type: ['Boy', 'Girl']).search_surname(params[:surname]).all
     else
-      @users = User.all
+      @users = User.where(type: ['Boy', 'Girl']).all
     end
   end
 
