@@ -13,13 +13,17 @@ Rails.application.routes.draw do
   get 'main_boy' => 'main_boy#index'
   get 'main_girl' => 'main_girl#index'
   get 'main_admin' => 'main_admin#index'
-  get 'cv_serch' => 'admin_search#cv_search', as: :cv_search
+  get 'reports' => 'main_admin#reports'
+  get 'cv_serch' => 'main_admin#cv_search', as: :cv_search
   get 'usr_search' => 'user_search#usr_search', as: :usr_search
   # post 'report' => 'complaints#new', as: :report
   resource :complaint, only: :create, as: :report
+  post 'ban_reported' => 'complaints#ban_reported', as: :ban_reported
+  post 'ban_sender' => 'complaints#ban_sender', as: :ban_sender
+  post 'ignore' => 'complaints#ignore', as: :ignore
   get 'users/:id' => 'users#show', as: :users
   get 'conversation' => 'conversation#index'
-  get 'conversations/:id' => 'conversations#show'
+  get 'conversations/:id' => 'conversations#show', as: :conversations
   post '/conversation/leave' => 'conversation#leave', as: :leave_cv
   resources :messages
   root 'welcome#index'

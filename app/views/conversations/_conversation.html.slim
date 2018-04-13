@@ -1,3 +1,6 @@
-p Conversation id #{conversation.id}
-p boy #{Boy.find(conversation.boy_id).username}
-p girl #{Girl.find(conversation.girl_id).username}
+tr
+  td #{conversation.created_at}
+  td #{conversation.girl.username}(#{Message.where(conversation_id: conversation.id, user_id: conversation.girl.id).count})
+  td #{conversation.boy.username}(#{Message.where(conversation_id: conversation.id, user_id: conversation.boy.id).count})
+  td
+    = link_to "link", conversations_path(conversation.id)

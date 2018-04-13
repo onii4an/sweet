@@ -1,0 +1,16 @@
+h1 Total #{complaint.count} active complaints
+table.table
+  thead
+    tr
+      td Sender nickname
+      td Reported nickname
+      td Sender conversations
+      td Reported conversations
+      td Decision
+      / table.table
+        tr
+          td Ban reported
+          td Ban sender
+          td Ignore
+  tbody
+    = render partial: 'complaints/complaint', collection: complaint, as: :complaint

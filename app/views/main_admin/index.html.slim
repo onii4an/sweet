@@ -7,3 +7,12 @@
     = text_field_tag :surname, ''
     br
     = submit_tag "Find", name: nil
+= form_tag cv_search_path, method: :get
+  p
+    p Girl id
+    = text_field_tag :girl_id, ''
+    br
+    p Boy id
+    = text_field_tag :boy_id, ''
+    br
+    = submit_tag "Find", name: nil

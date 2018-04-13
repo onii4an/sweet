@@ -1,0 +1,10 @@
+h1 Total find #{find_cv.count} conversations
+table.table
+  thead
+    tr
+      td Date
+      td Girl(count of messages)
+      td Boy(count of messages)
+      td Link
+  tbody
+    = render partial: 'conversations/conversation', collection: find_cv , as: :conversation
