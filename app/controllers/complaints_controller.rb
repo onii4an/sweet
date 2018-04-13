@@ -14,10 +14,12 @@ class ComplaintsController < ApplicationController
     @complaint = Complaint.find(params[:id])
     User.find(@complaint.sender_id).update_attribute :status, :banned
     @complaint.update_attribute :active, false
+    AdminJob.perform_later('report', params[:id])
   end
 
   def ignore
     Complaint.find(params[:id]).update_attribute :active, false
+    AdminJob.perform_later('report', params[:id])
   end
 
   private
