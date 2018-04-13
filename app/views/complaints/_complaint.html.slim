@@ -16,6 +16,6 @@ tr class="report_#{complaint.id}"
     td
       = link_to "link", cv_search_path(boy_id: complaint.bad_id, girl_id: '')
   td
-    = button_to "Ban reported", ban_reported_path(id: complaint.id)
-    = button_to "Ban sender", ban_sender_path(id: complaint.id)
-    = button_to "Ignore", ignore_path(id: complaint.id)
+    = button_to "Ban reported", ban_reported_path(id: complaint.id), remote: true
+    = button_to "Ban sender", ban_sender_path(id: complaint.id), remote: true
+    = button_to "Ignore", ignore_path(id: complaint.id), remote: true
