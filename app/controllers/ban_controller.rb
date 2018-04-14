@@ -1,5 +1,5 @@
 class BanController < ApplicationController
-  defore_action :check_user
+  before_action :check_user
 
   def banned; end
 
