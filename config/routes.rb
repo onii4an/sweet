@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   post 'ban_reported' => 'complaints#ban_reported', as: :ban_reported
   post 'ban_sender' => 'complaints#ban_sender', as: :ban_sender
   post 'ignore' => 'complaints#ignore', as: :ignore
+  get 'banned' => 'ban#banned'
   get 'users/:id' => 'users#show', as: :users
   get 'conversation' => 'conversation#index'
   get 'conversations/:id' => 'conversations#show', as: :conversations

@@ -1,0 +1,2 @@
+module BanHelper
+end

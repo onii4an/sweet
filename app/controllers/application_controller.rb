@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action { |_c| current_boy.track unless current_boy.nil? }
   before_action { |_c| current_girl.track unless current_girl.nil? }
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :ban_filter
   helper_method :current_user
   helper_method :current_conversation
 
@@ -28,5 +29,9 @@ class ApplicationController < ActionController::Base
     added_attrs = %i[username email password password_confirmation remember_me name surname age avatar avatar_cache remove_avatar intro]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+  end
+
+  def ban_filter
+    redirect_to banned_path if current_user&.status == 'banned' && controller_name != 'ban'
   end
 end
