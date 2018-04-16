@@ -10,7 +10,7 @@
       |Nickname:&nbsp;
       = conversation.boy.username
       br
-      - if current_girl
+      - if current_girl && !current_admin
         .complaint
           = form_tag report_path, method: :post
             = hidden_field_tag :sender_id, current_user.id
@@ -35,7 +35,7 @@
         |Nickname:&nbsp;
         = conversation.girl.username
         br
-        - if current_boy
+        - if current_boy && !current_admin
           .complaint
             = form_tag report_path, method: :post
               = hidden_field_tag :sender_id, current_user.id
