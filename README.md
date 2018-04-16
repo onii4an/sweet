@@ -1,4 +1,5 @@
-Blind appointment service
+# Sweet
+## Blind appointment service
 
 - There is a user registration.
 - Random defines two people (of different genders) and they chat together. You can choose another person (skip the suggested one).
@@ -9,3 +10,6 @@ Blind appointment service
 - There is a choice of age category.
 - You can complain about a person, have a ban.
 - Display on the main page the number of girls and guys online
+
+## Heroku
+[Heroku](https://beta-sweet.herokuapp.com/)
