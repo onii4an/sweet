@@ -16,5 +16,7 @@
         li
           = link_to 'Logout', destroy_girl_session_path, method: :delete
   .online
-    p Boys online #{Boy.online.count}
-    p Girls online #{Girl.online.count}
+    p
+      | Boys online <span class="boy_online"> #{Boy.online.count}</span>
+    p
+      | Girls online <span class="girl_online"> #{Girl.online.count}</span>

@@ -1,7 +1,7 @@
 Blind appointment service
 
 - There is a user registration.
-- Random defines two people (of different sexes) and they chat together. You can choose another person (skip the suggested one).
+- Random defines two people (of different genders) and they chat together. You can choose another person (skip the suggested one).
 - Photos of these people are hidden.
 - There are allotted time for correspondence (from 3 minutes, for example)
 - After 3 minutes, both participants are invited to end the chat or continue (extend for 3 minutes) If both choose to extend - the chat continues.

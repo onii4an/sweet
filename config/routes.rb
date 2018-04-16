@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   get 'welcome/index'
   get 'rules' => 'welcome#rules'
   get 'main' => 'logged#index'
-  get 'main_boy' => 'main_boy#index'
-  get 'main_girl' => 'main_girl#index'
+  # get 'main_boy' => 'main_boy#index'
+  # get 'main_girl' => 'main_girl#index'
   get 'main_admin' => 'main_admin#index'
   get 'reports' => 'main_admin#reports'
   get 'cv_serch' => 'main_admin#cv_search', as: :cv_search

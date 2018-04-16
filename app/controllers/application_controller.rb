@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action { |_c| current_girl.track unless current_girl.nil? }
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :ban_filter
+  before_action :update_online
   helper_method :current_user
   helper_method :current_conversation
 
@@ -33,5 +34,9 @@ class ApplicationController < ActionController::Base
 
   def ban_filter
     redirect_to banned_path if current_user&.status == 'banned' && controller_name != 'ban'
+  end
+
+  def update_online
+    OnlineJob.perform_later('update', Boy.online.count, Girl.online.count)
   end
 end
