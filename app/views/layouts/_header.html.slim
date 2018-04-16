@@ -9,6 +9,9 @@ nav.navbar.navbar-default.navbar-fixed-top
         ul.nav.navbar-nav.navbar-right
           li
             = link_to 'Logout', destroy_admin_session_path, method: :delete
+        ul.nav.navbar-nav.navbar-right
+          li
+            = link_to 'Reports', reports_path
     - elsif current_boy
       = render 'layouts/boy_header'
     - elsif current_girl
