@@ -16,7 +16,7 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 // @import "bootstrap-sprockets";
 @import "bootstrap";
-/*
+
 .online {
   line-height: 0.5;
   padding-top: 12px;
@@ -47,20 +47,20 @@ p.alert {
 }
 
 .btn.btn-danger a {
-  color:#ffffff;
+  // color:#ffffff;
   font-size: 20px;
-  text-shadow: 3px 2px 2px grey;
+  // text-shadow: 3px 2px 2px grey;
 }
 
 h1 {
-  color:#ffffff;
+  // color:#ffffff;
   font-size: 80px;
   font-family: italic;
-  text-shadow: 3px 2px 2px grey;
+  // text-shadow: 3px 2px 2px grey;
 }
 
 .quote {
-  color:#E1E0DF;
+  // color:#E1E0DF;
   font-size: 25px;
   font-style: italic;
   font-family: 'Times New Roman', Times, serif;
@@ -131,4 +131,3 @@ img {
 .navbar-fixed-top {
   height: 10px;
 }
-*/
