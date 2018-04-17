@@ -31,21 +31,20 @@
   .box
     = image_tag(conversation.girl.avatar.url)
     .box_user_data
-      .box_user_data_girl_block
-        |Nickname:&nbsp;
-        = conversation.girl.username
-        br
-        - if current_boy && !current_admin
-          .complaint
-            = form_tag report_path, method: :post
-              = hidden_field_tag :sender_id, current_user.id
-              = hidden_field_tag :bad_id, conversation.girl.id
-              = submit_tag 'Report user', name: nil
-        br
-        |Age:&nbsp;
-        = conversation.girl.age
-        br
-        |Intro:
+      |Nickname:&nbsp;
+      = conversation.girl.username
+      br
+      - if current_boy && !current_admin
+        .complaint
+          = form_tag report_path, method: :post
+            = hidden_field_tag :sender_id, current_user.id
+            = hidden_field_tag :bad_id, conversation.girl.id
+            = submit_tag 'Report user', name: nil
+      br
+      |Age:&nbsp;
+      = conversation.girl.age
+      br
+      |Intro:
       .intro
         |"
         = conversation.girl.intro
