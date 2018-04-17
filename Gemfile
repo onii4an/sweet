@@ -5,8 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 gem 'heroku'
-
-gem "sentry-raven"
+gem 'sentry-raven'
 
 gem 'bootstrap-sass'
 gem 'jquery-rails'
@@ -68,6 +67,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
