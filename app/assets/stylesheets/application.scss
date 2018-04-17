@@ -14,9 +14,9 @@
  *= require_self
  */
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-@import "bootstrap-sprockets";
+// @import "bootstrap-sprockets";
 @import "bootstrap";
-
+/*
 .online {
   line-height: 0.5;
   padding-top: 12px;
@@ -24,14 +24,14 @@
 }
 
 
-body { 
-background: url('/assets/header.jpg') no-repeat center center fixed; 
-background-size: cover;
-}
+// body {
+// background: url('/assets/header.jpg') no-repeat center center fixed;
+// background-size: cover;
+// }
 
-.container { 
+.container {
   margin-top: 0px;
-  color:#f05f40;
+  // color:#f05f40;
   font-size: 15px;
   font-style: italic;
   #border: 1px solid green;
@@ -107,13 +107,13 @@ img {
                                   //Scrollbar//
 ::-webkit-scrollbar {
       width: 15px;
-} /* this targets the default scrollbar (compulsory) */
+} // this targets the default scrollbar (compulsory)
 
 ::-webkit-scrollbar-track {
       background-color: #6b6c882e;
       border-radius: 12px;
-} /* the new scrollbar will have a flat appearance with the set background color */
- 
+} // the new scrollbar will have a flat appearance with the set background color
+
 ::-webkit-scrollbar-track:horizontal {
    background-color: transparent;
  }
@@ -121,13 +121,14 @@ img {
 ::-webkit-scrollbar-thumb {
       background-color: #6b6c885e;
       border-radius: 12px;
-} /* this will style the thumb, ignoring the track */
- 
+} // this will style the thumb, ignoring the track
+
 ::-webkit-scrollbar-corner {
       background-color: transparent;
       border:0px;
-} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+} // if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled
 
 .navbar-fixed-top {
   height: 10px;
 }
+*/
