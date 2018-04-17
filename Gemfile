@@ -7,7 +7,7 @@ end
 ruby '2.5.0'
 gem 'sentry-raven'
 
-gem 'bootstrap', '~> 4.1.0'
+gem 'bootstrap-sass'
 gem 'jquery-rails'
 # Slim
 gem 'slim-rails'
