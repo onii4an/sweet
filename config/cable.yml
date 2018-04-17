@@ -6,5 +6,6 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
+  url: redis://redistogo:467bdecdf6dc3720db1c3151f31e4183@porgy.redistogo.com:10642/
+  host: jack.redistogo.com
   channel_prefix: sweet_production
