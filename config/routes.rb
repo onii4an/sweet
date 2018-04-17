@@ -28,4 +28,6 @@ Rails.application.routes.draw do
   post '/conversation/leave' => 'conversation#leave', as: :leave_cv
   resources :messages
   root 'welcome#index'
+
+  resources :locales, only: :update
 end

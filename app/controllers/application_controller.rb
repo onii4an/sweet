@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :ban_filter
   before_action :update_online
+  before_action :set_locale
   helper_method :current_user
   helper_method :current_conversation
 
@@ -38,5 +39,9 @@ class ApplicationController < ActionController::Base
 
   def update_online
     OnlineJob.perform_later('update', Boy.online.count, Girl.online.count)
+  end
+
+  def set_locale
+    I18n.locale = session[:locale] || I18n.default_locale
   end
 end

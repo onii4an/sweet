@@ -3,6 +3,7 @@
 .collapse.navbar-collapse
   ul.nav.navbar-nav.navbar-left
     = render "layouts/rules"
+      span.boy_online #{Girl.online.count}
   ul.nav.navbar-nav.navbar-right
     li.dropdown
       a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
@@ -10,13 +11,17 @@
         span.caret
       ul.dropdown-menu
         li
-          = link_to 'Profile', users_path(current_boy.id)
+          = link_to "#{t :profile}", users_path(current_boy.id)
         li
-          = link_to 'Account settings', edit_boy_registration_path
+          = link_to "#{t :account_settings}", edit_boy_registration_path
         li
-          = link_to 'Logout', destroy_boy_session_path, method: :delete
-  .online
-    p
-      | Boys online <span class="boy_online"> #{Boy.online.count}</span>
-    p
-      | Girls online <span class="girl_online"> #{Girl.online.count}</span>
+          = link_to "#{t :logout}", destroy_boy_session_path, method: :delete
+    li.dropdown
+      a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+        | Language
+        span.caret
+      ul.dropdown-menu
+        li
+          = link_to "#{t :english}", locale_path(:en), method: :patch
+        li
+          = link_to "#{t :ukrainian}", locale_path(:ua), method: :patch

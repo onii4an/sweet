@@ -1,6 +1,10 @@
 - if current_page?(controller: '/welcome', action: :rules)
   li.active
-    = link_to 'Rules', rules_path
+    = link_to "#{t :rules}", rules_path
 - else
   li
-    = link_to 'Rules', rules_path
+    = link_to "#{t :rules}", rules_path
+p.navbar-text
+  | #{t :boys_online} <span class="girl_online"> #{Boy.online.count}</span>
+p.navbar-text
+  | #{t :girls_online} <span class="girl_online"> #{Girl.online.count}</span>
