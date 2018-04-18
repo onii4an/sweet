@@ -3,41 +3,45 @@
     .box_show_user_data
       = image_tag(user.avatar.url)
       .box_user_data
-        |Nickname:&nbsp;
+        |#{t :nickname}:&nbsp;
         = user.username
         br
-        |Name:&nbsp;
+        |#{t :name}:&nbsp;
         = user.name
         br
-        |Surname:&nbsp;
+        |#{t :surname}:&nbsp;
         = user.surname
         br
-        |Age:&nbsp;
+        |#{t :age}:&nbsp;
         = user.age
         br
-        |Gender:&nbsp;
-        = user.type
+        |#{t :gender}:&nbsp;
+        - if user.type == "Boy"
+          = t :boy
+        - elsif user.type == "Girl"
+          = t :girl
         br
-        |Intro:
+        = t :intro
         .intro
           |"
           = user.intro
           |"
   .block2
-    h1 You at #{user.username} page
+    h1 #{t :user_page} #{user.username} #{t :user_page2}
     br
     .conversation_buttons
       .btn_go_to_conversation
         - if current_boy
-          a = link_to 'Start conversation with random girl', conversation_path
+          a = link_to "#{t :start_wth_girl}", conversation_path
         -if current_girl
-          a = link_to 'Start conversation with random boy', conversation_path
+          a = link_to "#{t :start_wth_boy}", conversation_path
     = form_tag usr_search_path, method: :get
+      h2= t :usr_search
       p
-        p name
+        p= t :name
         = text_field_tag :name, ''
         br
-        p surname
+        p= t :surname
         = text_field_tag :surname, ''
         br
-        =submit_tag 'Find', name: nil
+        =submit_tag "#{t :find}", name: nil
