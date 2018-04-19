@@ -10,18 +10,18 @@
         span.caret
       ul.dropdown-menu
         li
-          = link_to 'As girl', new_girl_registration_path
+          = link_to "#{t :as_girl}", new_girl_registration_path
         li
-          = link_to 'As boy', new_boy_registration_path
+          = link_to "#{t :as_boy}", new_boy_registration_path
     li.dropdown
       a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
         | Login
         span.caret
       ul.dropdown-menu
         li
-          = link_to 'As girl', new_girl_session_path
+          = link_to "#{t :as_girl}", new_girl_session_path
         li
-          = link_to 'As boy', new_boy_session_path
+          = link_to "#{t :as_boy}", new_boy_session_path
     li.dropdown
       a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
         | #{t :language}
