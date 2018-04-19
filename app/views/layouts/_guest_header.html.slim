@@ -22,3 +22,12 @@
           = link_to 'As girl', new_girl_session_path
         li
           = link_to 'As boy', new_boy_session_path
+    li.dropdown
+      a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+        | #{t :language}
+        span.caret
+      ul.dropdown-menu
+        li
+          = link_to "#{t :english}", locale_path(:en), method: :patch
+        li
+          = link_to "#{t :russian}", locale_path(:ru), method: :patch

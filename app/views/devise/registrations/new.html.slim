@@ -25,7 +25,7 @@
       br
       = f.text_field :surname
     .field
-      = f.label :age 
+      = f.label :age
       = f.select :age, options_for_select(18..40)
     / .field
       = f.radio_button :sex, "male"
@@ -33,7 +33,7 @@
       = f.radio_button :sex, "female"
       p Female
     .field
-      = f.label :password
+      = f.label t('.password')
       - if @minimum_password_length
         em
           | (

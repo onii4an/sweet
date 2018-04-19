@@ -13,6 +13,7 @@ gem 'jquery-rails'
 gem 'slim-rails'
 # Devise flexible authentication
 gem 'devise', '~> 4.4', '>= 4.4.1'
+gem 'devise-i18n'
 # Gem for Rails application - provides you list of online users
 gem 'onliner'
 # A simple and extremely flexible way to upload files from Ruby applications

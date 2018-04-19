@@ -1,62 +1,58 @@
 .edit_block
-  .edit_avatar
-    - if current_boy&.avatar&.url.present?
-      = image_tag(current_boy.avatar.url)
-        = f.label :remove_avatar do
-        = f.check_box :remove_avatar
-    - if current_girl&.avatar&.url.present?
-      = image_tag(current_girl.avatar.url)
-
+  / h2
+    / = t('.title', resource: resource_name.to_s.humanize)
   = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
     = devise_error_messages!
-    .field
-      = f.label :remove_avatar
-      = f.file_field :avatar
-      = f.hidden_field :avatar_cache
+    .edit_avatar
+      - if current_boy&.avatar&.url.present?
+        = image_tag(current_boy.avatar.url)
+        = f.label "#{t :change_avatar}"
+        = f.file_field :avatar
+        = f.hidden_field :avatar_cache
+      - if current_girl&.avatar&.url.present?
+        = image_tag(current_girl.avatar.url)
+        = f.label "#{t :change_avatar}"
+        = f.file_field :avatar
+        = f.hidden_field :avatar_cache
     .field
       = f.label :email
       br
       = f.email_field :email, autofocus: true, autocomplete: "email"
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
       div
-        | Currently waiting confirmation for:
-        = resource.unconfirmed_email
+        = t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email)
     .field
-      = f.label :username
+      = f.label "#{t :username}"
       br
       = f.text_field :username
     .field
-      = f.label :name
+      = f.label "#{t :name}"
       br
       = f.text_field :name
     .field
-      = f.label :surname
+      = f.label "#{t :surname}"
       br
       = f.text_field :surname
     .field
-      = f.label :age
+      = f.label "#{t :age}"
       br
       = f.select :age, options_for_select(18..40)
-      br
     .field
-      = f.label :intro
+      = f.label "#{t :intro}"
       br
       = f.text_area :intro
-    / .field
-      = f.radio_button :sex, "male"
-      p Male
-      = f.radio_button :sex, "female"
     .field
-      = f.label :password
+      = f.label "#{t :password}"
       i
-        | (leave blank if you don't want to change it)
+        | (
+        = t('.leave_blank_if_you_don_t_want_to_change_it')
+        | )
       br
       = f.password_field :password, autocomplete: "off"
       - if @minimum_password_length
         br
         em
-          = @minimum_password_length
-          |  characters minimum
+          = t('devise.shared.minimum_password_length', count: @minimum_password_length)
     .field
       = f.label :password_confirmation
       br
@@ -64,14 +60,16 @@
     .field
       = f.label :current_password
       i
-        | (we need your current password to confirm your changes)
+        | (
+        = t('.we_need_your_current_password_to_confirm_your_changes')
+        | )
       br
       = f.password_field :current_password, autocomplete: "off"
     .actions
-      = f.submit "Update"
+      = f.submit t('.update')
   / h3
-    / | Cancel my account
+    / = t('.cancel_my_account')
   / p
-    / | Unhappy?
-    = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
-  = link_to "Back", :back
+    / = t('.unhappy')
+    / = button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete
+  = link_to t('devise.shared.links.back'), :back
