@@ -7,7 +7,7 @@
   .box
     = image_tag(conversation.boy.avatar.url)
     .box_user_data
-      |Nickname:&nbsp;
+      |#{t :nickname}:&nbsp;
       = conversation.boy.username
       br
       - if current_girl && !current_admin
@@ -17,10 +17,10 @@
             = hidden_field_tag :bad_id, conversation.boy.id
             = submit_tag 'Report user', name: nil
       br
-      |Age:&nbsp;
+      |#{t :age}:&nbsp;
       = conversation.boy.age
       br
-      |Intro:
+      |#{t :intro}:
       .intro
         |"
         = conversation.boy.intro
@@ -31,7 +31,7 @@
   .box
     = image_tag(conversation.girl.avatar.url)
     .box_user_data
-      |Nickname:&nbsp;
+      |#{t :nickname}:&nbsp;
       = conversation.girl.username
       br
       - if current_boy && !current_admin
@@ -41,10 +41,10 @@
             = hidden_field_tag :bad_id, conversation.girl.id
             = submit_tag 'Report user', name: nil
       br
-      |Age:&nbsp;
+      |#{t :age}:&nbsp;
       = conversation.girl.age
       br
-      |Intro:
+      |#{t :intro}:
       .intro
         |"
         = conversation.girl.intro
@@ -55,5 +55,5 @@
       = form_for message, remote: true do |f|
         = f.text_field :body, placeholder: 'Type something here!', required: true, class: 'textarea', autocomplete: 'off'
         = button_tag '', :type => 'submit', :class => 'send_message'
-          | Send&nbsp;
+          | #{t :send}&nbsp;
           i.glyphicon.glyphicon-send
